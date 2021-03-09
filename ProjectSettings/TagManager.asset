@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemaps
+    uniqueID: 1604778517
+    locked: 0
+  - name: Folliage
+    uniqueID: 4290015711
+    locked: 0
+  - name: Objects
+    uniqueID: 4123846025
+    locked: 0
+  - name: Shadows
+    uniqueID: 198962491
+    locked: 0
+  - name: Particles
+    uniqueID: 3937119951
+    locked: 0
