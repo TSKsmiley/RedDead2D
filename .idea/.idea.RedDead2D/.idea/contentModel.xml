@@ -27,6 +27,8 @@
             <e p="DialogueManager.cs" t="Include" />
             <e p="DialogueTrigger.cs" t="Include" />
           </e>
+          <e p="InputMaster.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
           <e p="Quest.cs" t="Include" />
           <e p="QuestManager.cs" t="Include" />
         </e>

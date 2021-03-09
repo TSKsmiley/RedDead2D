@@ -19,38 +19,22 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox_Close.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox_Close.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox_Open.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/DialogueBox_Open.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Dialogue_Test.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Dialogue_Test.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Dialogue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Dialogue.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +52,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quest.cs" />
+        <option value="$PROJECT_DIR$/Assets/.gitignore" />
       </list>
     </option>
   </component>
@@ -81,6 +66,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -95,10 +82,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="37520">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="37520" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -116,6 +103,14 @@
       <workItem from="1613729403650" duration="9060000" />
       <workItem from="1615275029489" duration="5485000" />
     </task>
+    <task id="LOCAL-00001" summary="bruh">
+      <created>1615289750821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615289750821</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
@@ -131,7 +126,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -147,16 +142,42 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="bruh" />
+    <option name="LAST_COMMIT_MESSAGE" value="bruh" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="165" key="#Plugins" timestamp="1615275406489">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="165" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615275406489" />
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615289987660">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615289987660" />
     <state x="707" y="369" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1613741874695">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="369" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1050/-1080.-495.1080.1890@0.0.1920.1050" timestamp="1613741874695" />
+    <state width="1877" height="379" key="GridCell.Tab.0.bottom" timestamp="1615290000898">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615290000898" />
+    <state width="1877" height="379" key="GridCell.Tab.0.center" timestamp="1615290000898">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615290000898" />
+    <state width="1877" height="379" key="GridCell.Tab.0.left" timestamp="1615290000897">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615290000897" />
+    <state width="1877" height="379" key="GridCell.Tab.0.right" timestamp="1615290000898">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615290000898" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1615289764488">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615289764488" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1615275279228">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputMaster.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/InputMaster.inputactions'
 
 using System;
 using System.Collections;
@@ -131,61 +131,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""right"",
                     ""id"": ""775a2c3e-d55a-43fa-94c2-42e02b3a8045"",
                     ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Test Move VR Controller"",
-                    ""id"": ""0a886623-5027-4955-b7a0-ab621b3595b9"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8c3ac058-0b55-4267-960a-9eafd3a9ef92"",
-                    ""path"": ""<ViveWand>/trackpad/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""7c14d9e8-467f-489a-a3c9-9eab3a2d61d9"",
-                    ""path"": ""<ViveWand>/trackpad/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""0cef72b5-7e7e-45fa-a3da-03a8724b8639"",
-                    ""path"": ""<ViveWand>/trackpad/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""9bdeaca1-dc96-44eb-878f-d1000d8a5a3d"",
-                    ""path"": ""<ViveWand>/trackpad/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
