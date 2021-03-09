@@ -59,6 +59,7 @@ namespace QuestSystem
             AllQuests[ActiveQuest].Start();
             throw new NotImplementedException();
         }
+
         public static void CompleteID(int questID)
         {
             ActiveQuest = questID + 1;
