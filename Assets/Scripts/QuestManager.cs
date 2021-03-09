@@ -9,7 +9,7 @@ public class QuestManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Quest.StartNew("Space", "do you even space bro", "press space to complete this test quest");
+        new Quest("Space", "do you even space bro", "press space to complete this test quest");
         Quest.AllQuests[0].Start();
     }
 

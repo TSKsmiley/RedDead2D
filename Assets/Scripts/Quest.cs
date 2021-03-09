@@ -46,25 +46,21 @@ namespace QuestSystem
         
         // - - - STATIC METHODS - - - 
 
-        public static Quest StartNew(string name, string description, string objective)
-        {
-            Quest quest = new Quest(name, description, objective);
-            quest.Start();
-            return quest;
-        }
-        
         public static void CompleteActive()
         {
             ActiveQuest++;
             AllQuests[ActiveQuest].Start();
-            throw new NotImplementedException();
         }
 
         public static void CompleteID(int questID)
         {
             ActiveQuest = questID + 1;
             AllQuests[ActiveQuest].Start();
-            throw new NotImplementedException();
+        }
+
+        public static Quest GetActive()
+        {
+            return AllQuests[ActiveQuest];
         }
         
         // - - - METHODS - - - 
