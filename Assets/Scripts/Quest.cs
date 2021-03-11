@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace QuestSystem
@@ -17,8 +18,12 @@ namespace QuestSystem
         //TODO: RewardItem (item class not yet impemented)
 
         
-        public static List<Quest> AllQuests;
+        public static List<Quest> AllQuests = new List<Quest>();
         public static int ActiveQuest = 0;
+        
+        public static TextMeshProUGUI txtName;
+        public static TextMeshProUGUI txtObjective;
+        public static TextMeshProUGUI txtDescription;
 
         
         // - - - CONSTRUCTORS - - - 
@@ -46,6 +51,13 @@ namespace QuestSystem
         
         // - - - STATIC METHODS - - - 
 
+        public static void SetUi(TextMeshProUGUI name,TextMeshProUGUI objective, TextMeshProUGUI description)
+        {
+            txtName = name;
+            txtObjective = objective;
+            txtDescription = description;
+        }
+
         public static void CompleteActive()
         {
             ActiveQuest++;
@@ -67,7 +79,9 @@ namespace QuestSystem
 
         public void Start()
         {
-            throw new NotImplementedException();
+            txtName.text = Name;
+            txtObjective.text = $"Objective: {Objective}";
+            txtDescription.text = Description;
         }
         
     }
