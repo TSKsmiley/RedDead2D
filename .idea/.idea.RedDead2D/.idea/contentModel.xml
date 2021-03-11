@@ -29,6 +29,12 @@
             <e p="UIDialogueOption.cs" t="Include" />
           </e>
           <e p="InputMaster.cs" t="Include" />
+          <e p="Inventory" t="Include">
+            <e p="Items" t="Include">
+              <e p="Item.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
+            </e>
+          </e>
           <e p="PlayerController.cs" t="Include" />
           <e p="Quest.cs" t="Include" />
           <e p="QuestManager.cs" t="Include" />
