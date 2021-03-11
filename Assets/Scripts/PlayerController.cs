@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     private string currentTrigger = "";
-
+    private Collider2D currentTriggerFull = null;
+    
     public float speed = 10f;
 
     void Awake()
@@ -26,7 +27,12 @@ public class PlayerController : MonoBehaviour
     private void Interact(InputAction.CallbackContext obj)
     {
         if(DebugMode)Debug.Log("Interaction! current trigger: " + currentTrigger);
-
+        
+        if (QuestManager.instance.isStoryFinished == false)
+        {
+            if (currentTriggerFull.name == QuestManager.instance.GetActive().NPC.name) QuestManager.instance.GetActive().NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
+        
         // ALL INTERACTABLE PLACES GO HERE
         switch (currentTrigger)
         {
@@ -56,11 +62,13 @@ public class PlayerController : MonoBehaviour
     {
         if(DebugMode)Debug.Log("Entering: "+other.tag);
         currentTrigger = other.tag;
+        currentTriggerFull = other;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if(DebugMode)Debug.Log("Leaving: "+other.tag);
         currentTrigger = "";
+        currentTriggerFull = null;
     }
 }

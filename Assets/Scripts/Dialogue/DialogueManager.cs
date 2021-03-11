@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour {
     public Transform dialogueOptionsParent;
     public GameObject dialogueOptionsButtonPrefab;
     public Button continueButton;
+
+    public bool isInDialogue = false;
     
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
@@ -50,6 +52,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
+        isInDialogue = true;
         animator.SetBool("IsOpen", true); // Animate the dialogue 
 
         nameText.text = dialogue.dialogueSegments[0].speakerName; // Set the speakerName to the first element in the dialogueElements array
@@ -73,6 +76,7 @@ public class DialogueManager : MonoBehaviour {
         // If we have nothing else to say we end the dialogue
         if (sentences.Count == 0)
         {
+            isInDialogue = false;
             EndDialogue();
             return;
         }
