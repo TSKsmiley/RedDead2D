@@ -1,13 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool DebugMode;
+    
     private InputMaster playerInput;
 
     private Rigidbody2D rb;
+
+    private string currentTrigger = "";
 
     public float speed = 10f;
 
@@ -15,9 +20,23 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = new InputMaster();
         rb = GetComponent<Rigidbody2D>();
+        playerInput.Player.Interact.performed += Interact;
     }
 
-	private void OnEnable()
+    private void Interact(InputAction.CallbackContext obj)
+    {
+        if(DebugMode)Debug.Log("Interaction! current trigger: " + currentTrigger);
+
+        // ALL INTERACTABLE PLACES GO HERE
+        switch (currentTrigger)
+        {
+            case "Saloon":
+                //TODO: Saloon code
+                break;
+        }
+    }
+
+    private void OnEnable()
 	{
         playerInput.Enable();
 	}
@@ -33,13 +52,15 @@ public class PlayerController : MonoBehaviour
         rb.velocity = moveInput * speed;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Saloon" && playerInput.Player.Interact.triggered)
-        {
-            Debug.Log("Pressed E inside collider");
-        }
+        if(DebugMode)Debug.Log("Entering: "+other.tag);
+        currentTrigger = other.tag;
     }
 
-
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(DebugMode)Debug.Log("Leaving: "+other.tag);
+        currentTrigger = "";
+    }
 }
