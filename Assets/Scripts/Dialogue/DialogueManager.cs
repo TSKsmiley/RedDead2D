@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
-    public Text nameText;
-    public Text dialogueText;
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
 
     public Animator animator;
     
     public GameObject dialogueOptionsContainer;
     public Transform dialogueOptionsParent;
     public GameObject dialogueOptionsButtonPrefab;
-    public GameObject continueButton;
+    public Button continueButton;
     
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
@@ -104,13 +105,13 @@ public class DialogueManager : MonoBehaviour {
         {
             if (choice.dialogueChoice != "") // If the element isnt empty
             {
-                // Hide UI
-                continueButton.SetActive(false);
+                // Hide UI and disable button
+                continueButton.enabled = false;
                 dialogueOptionsContainer.SetActive(true);
                 GameObject newButton = Instantiate(dialogueOptionsButtonPrefab, dialogueOptionsParent); // We instantiate a button inside the options parent
                 spawnedButtons.Add(newButton); // Then add it to the list (this way we can delete them later to avoid filling up our list excessively and also to avoid duplicate buttons)
                 newButton.GetComponent<UIDialogueOption>().Setup(choice.followOnDialogue); // We call the setup where we pass the followOnDialogue choice
-                newButton.transform.GetChild(0).GetComponent<Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
+                newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
             }
         }
     }
@@ -120,7 +121,7 @@ public class DialogueManager : MonoBehaviour {
         spawnedButtons.ForEach(x => Destroy(x)); // We destroy our buttons
         // Hide UI
         dialogueOptionsContainer.SetActive(false);
-        continueButton.SetActive(true);
+        continueButton.enabled = true;
     }
 
     // Animate the dialoguebox causing it to exit the screen
