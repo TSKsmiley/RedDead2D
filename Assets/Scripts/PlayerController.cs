@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10f;
 
-    // Start is called before the first frame update
     void Awake()
     {
         playerInput = new InputMaster();
@@ -27,10 +27,19 @@ public class PlayerController : MonoBehaviour
         playerInput.Disable();
 	}
 
-	// Update is called once per frame
 	void FixedUpdate()
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Saloon" && playerInput.Player.Interact.triggered)
+        {
+            Debug.Log("Pressed E inside collider");
+        }
+    }
+
+
 }
