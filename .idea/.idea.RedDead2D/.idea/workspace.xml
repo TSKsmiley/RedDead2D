@@ -29,6 +29,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Prefabs/Buildings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Prefabs/Buildings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Saloon/SaloonShadow_0000_Layer 3.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Saloon/SaloonShadow_0000_Layer 3.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Saloon/SaloonShadow_0001_Layer 7.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Saloon/SaloonShadow_0001_Layer 7.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Saloon/Large.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" afterDir="false" />
@@ -42,19 +49,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.4.20f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/.gitignore" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Quest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/QuestManager.cs" />
-      </list>
-    </option>
   </component>
   <component name="ProjectId" id="1ohCLXhCzizakA5qZ3IeC5UtdR3" />
   <component name="ProjectLevelVcsManager">
@@ -78,7 +72,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -87,7 +81,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -151,92 +145,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="bruh" />
-    <option name="LAST_COMMIT_MESSAGE" value="bruh" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="165" key="#Plugins" timestamp="1615275406489">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="165" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615275406489" />
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615289987660">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615289987660" />
-    <state x="707" y="369" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1613741874695">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="707" y="369" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1050/-1080.-495.1080.1890@0.0.1920.1050" timestamp="1613741874695" />
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.1.bottom" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.1.center" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.1.left" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.1.right" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.2.bottom" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.2.center" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.2.left" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.2.right" timestamp="1615295404974">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404974" />
-    <state width="1877" height="240" key="GridCell.Tab.3.bottom" timestamp="1615295404975">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404975" />
-    <state width="1877" height="240" key="GridCell.Tab.3.center" timestamp="1615295404975">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404975" />
-    <state width="1877" height="240" key="GridCell.Tab.3.left" timestamp="1615295404975">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404975" />
-    <state width="1877" height="240" key="GridCell.Tab.3.right" timestamp="1615295404975">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615295404975" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1615290419568">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615290419568" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1615275279228">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1615275279228" />
+    <MESSAGE value="m,erge" />
+    <option name="LAST_COMMIT_MESSAGE" value="m,erge" />
   </component>
 </project>
