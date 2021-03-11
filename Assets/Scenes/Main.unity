@@ -360,6 +360,9 @@ MonoBehaviour:
   QuestName: {fileID: 519014571}
   QuestObjective: {fileID: 2126200964}
   QuestDescription: {fileID: 990136852}
+  AllQuests:
+  - {fileID: 11400000, guid: 973e940d465494045b44226e77a04e06, type: 2}
+  - {fileID: 11400000, guid: 2e103b5c1b0696d4bbe6c33f204e4995, type: 2}
 --- !u!4 &817006888
 Transform:
   m_ObjectHideFlags: 0
