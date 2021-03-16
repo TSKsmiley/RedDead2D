@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.ControllerShoot.performed += ControllerShoot;
     }
 
-    private void ControllerShoot(InputAction.CallbackContext obj) 
+
+	private void Start()
+	{
+        AudioManager.instance.Play("Music");
+	}
+	private void ControllerShoot(InputAction.CallbackContext obj) 
     {
         if (Time.time >= nextShootTime) 
         {
