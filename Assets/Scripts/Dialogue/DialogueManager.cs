@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour {
     public float typeDelay = 0.2f;
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour {
     private string currSentence;
     private DialogueChoice[] currChoiceArr;
     private bool isTyping = false;
+    public bool isInChoice = false;
     public static DialogueManager instance;
     
     private void Awake()
@@ -76,6 +78,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
     {
+        if (isInChoice == true) return;
+
         if (isTyping) 
         {
             StopAllCoroutines();
@@ -122,7 +126,6 @@ public class DialogueManager : MonoBehaviour {
         isTyping = false;
 
         CheckForChoices(choiceArr);
-        
     }
 
     private void CheckForChoices(DialogueChoice[] choiceArr) 
@@ -132,6 +135,7 @@ public class DialogueManager : MonoBehaviour {
         {
             if (choice.dialogueChoice != "") // If the element isnt empty
             {
+                isInChoice = true;
                 // Hide UI and disable button
                 continueButton.enabled = false;
                 dialogueOptionsContainer.SetActive(true);
@@ -139,6 +143,7 @@ public class DialogueManager : MonoBehaviour {
                 spawnedButtons.Add(newButton); // Then add it to the list (this way we can delete them later to avoid filling up our list excessively and also to avoid duplicate buttons)
                 newButton.GetComponent<UIDialogueOption>().Setup(choice.followOnDialogue); // We call the setup where we pass the followOnDialogue choice
                 newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
+                EventSystem.current.SetSelectedGameObject(spawnedButtons[0]);
             }
         }
     }

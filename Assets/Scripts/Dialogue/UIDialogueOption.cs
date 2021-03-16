@@ -13,6 +13,7 @@ public class UIDialogueOption : MonoBehaviour
     // Callback for when the button is clicked
     public void SelectOption()
     {
+        DialogueManager.instance.isInChoice = false;
         DialogueManager.instance.HideOptions(); // Call hide options
         DialogueManager.instance.StartDialogue(dialogueObj); // Start the dialogue
     }
