@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     
     public GameObject bulletPrefab;
     public Transform firePoint;
-    
+    public GameObject aimAssist;
+
     public float shootRate = 2f;
 
     private InputMaster playerInput;
@@ -96,6 +97,16 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
+
+        Vector2 aimInput = playerInput.Player.Aim.ReadValue<Vector2>();
+        if (aimInput != new Vector2(0,0)) {
+            aimAssist.SetActive(true);
+            aimAssist.transform.localPosition = aimInput * new Vector2(5f,5f) + new Vector2(0,2.5f);
+        }
+        else {
+            aimAssist.SetActive(false);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
