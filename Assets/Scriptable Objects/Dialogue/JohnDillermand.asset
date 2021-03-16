@@ -17,7 +17,8 @@ MonoBehaviour:
     dialogueText: Hej det er john dillermand!
     choices: []
   - speakerName: Fred
-    dialogueText: "Hold din k\xE6ft din perverse stodder"
+    dialogueText: Dummy dialogue lmao. Did y'all notice this font is ugly as shit,
+      matter of fact it's arial
     choices: []
   - speakerName: Fred
     dialogueText: Would you like to commit neckrope?

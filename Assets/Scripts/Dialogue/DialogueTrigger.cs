@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     public void TriggerDialogue()
     {
-        if (DialogueManager.instance.isInDialogue == false)
+        if (DialogueManager.instance.isDialogueStarted == false)
         {
             DialogueManager.instance.StartDialogue(QuestManager.instance.GetActive().dialogue[0]);
             QuestManager.instance.CompleteActive();

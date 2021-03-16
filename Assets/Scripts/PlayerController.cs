@@ -26,16 +26,27 @@ public class PlayerController : MonoBehaviour
 
         playerInput.Player.Interact.performed += Interact;
         playerInput.Player.Shoot.performed += Shoot;
+        playerInput.Player.ControllerShoot.performed += ControllerShoot;
     }
 
+    private void ControllerShoot(InputAction.CallbackContext obj) 
+    {
+        Vector2 controllerDir = playerInput.Player.Aim.ReadValue<Vector2>();
+        if (controllerDir == new Vector2(0,0)) controllerDir = new Vector2(1,0);
+
+        GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        g.GetComponent<Bullet>().MoveBullet(controllerDir.normalized);
+    }
 
     private void Shoot(InputAction.CallbackContext obj)
     {
         Vector2 mousePos = playerInput.Player.Aim.ReadValue<Vector2>();
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direction = mousePos - (Vector2)firePoint.position;
         
-        GameObject g = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        g.GetComponent<Bullet>().MoveBullet(mousePos.normalized);
+        GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        g.GetComponent<Bullet>().MoveBullet(direction.normalized);
     }
     
     private void OnEnable() => playerInput.Enable();
@@ -55,6 +66,9 @@ public class PlayerController : MonoBehaviour
         {
             case "Saloon":
                 //TODO: Saloon code
+                break;
+            case "NPC":
+                DialogueManager.instance.DisplayNextSentence();
                 break;
         }
     }

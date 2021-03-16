@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour {
-
+    public float typeDelay = 0.2f;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour {
     public GameObject dialogueOptionsButtonPrefab;
     public Button continueButton;
 
-    public bool isInDialogue = false;
+    public bool isDialogueStarted = false;
     
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
@@ -25,6 +25,9 @@ public class DialogueManager : MonoBehaviour {
     
     private List<GameObject> spawnedButtons;
     
+    private string currSentence;
+    private DialogueChoice[] currChoiceArr;
+    private bool isTyping = false;
     public static DialogueManager instance;
     
     private void Awake()
@@ -52,7 +55,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
-        isInDialogue = true;
+        isDialogueStarted = true;
         animator.SetBool("IsOpen", true); // Animate the dialogue 
 
         nameText.text = dialogue.dialogueSegments[0].speakerName; // Set the speakerName to the first element in the dialogueElements array
@@ -73,17 +76,27 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
     {
+        if (isTyping) 
+        {
+            StopAllCoroutines();
+            dialogueText.text = currSentence;
+            CheckForChoices(currChoiceArr);
+            isTyping = false;
+            return;
+        }
+        
         // If we have nothing else to say we end the dialogue
         if (sentences.Count == 0)
         {
-            isInDialogue = false;
+            isDialogueStarted = false;
             EndDialogue();
             return;
         }
 
         // We dequeue a choice, this is an array of the dialogueChoice object
         DialogueChoice[] choiceArr = choices.Dequeue();
-        
+        currChoiceArr = choiceArr;
+
         // We dequeue the speaker and set it to the text
         nameText.text = speakers.Dequeue();
         // We also dequeue the sentence to display
@@ -94,6 +107,8 @@ public class DialogueManager : MonoBehaviour {
 
     IEnumerator TypeSentence (string sentence, DialogueChoice[] choiceArr)
     {
+        isTyping = true;
+        currSentence = sentence;
         // We set the dialogueText to an empty string
         dialogueText.text = "";
         
@@ -101,9 +116,17 @@ public class DialogueManager : MonoBehaviour {
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter; // Append the letter onto the string
-            yield return null; // Wait one frame
+            //yield return null; // Wait one frame
+            yield return new WaitForSeconds(typeDelay);
         }
+        isTyping = false;
 
+        CheckForChoices(choiceArr);
+        
+    }
+
+    private void CheckForChoices(DialogueChoice[] choiceArr) 
+    {
         // Go through each choice in the choiceArr
         foreach (DialogueChoice choice in choiceArr)
         {

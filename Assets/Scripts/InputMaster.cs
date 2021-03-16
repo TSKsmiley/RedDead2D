@@ -35,6 +35,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""ControllerShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c730fdf-87a8-44e9-bb31-8a0e5bf0e4d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Shoot"",
                     ""type"": ""Button"",
                     ""id"": ""ea1f2572-d3de-4625-8b3b-5d8fa8fa62c7"",
@@ -44,7 +52,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Aim"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""c6fa2cd7-cf78-420a-95b0-52d5e44a1f37"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -108,59 +116,15 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Moving (Controller)"",
-                    ""id"": ""9e8ba210-5c41-4f44-b0b4-5d88ee2e2d20"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""d209cbad-387e-4401-a82b-6667dd572b91"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""e948ab91-3762-4da3-9e4e-41c5883984c5"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""131673e4-b008-4b3d-85ce-4d7deed7ed9c"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""260725c7-aeff-470a-a154-4cd2ebc04899"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""775a2c3e-d55a-43fa-94c2-42e02b3a8045"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -197,23 +161,34 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""aaec98ba-ed76-4cfc-9354-4226bead63f7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c1876bfe-834d-49c4-863b-fac6d6a635c9"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbf8a245-b046-4226-8f72-229965e67d61"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aaec98ba-ed76-4cfc-9354-4226bead63f7"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControllerShoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -226,6 +201,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_ControllerShoot = m_Player.FindAction("ControllerShoot", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
     }
@@ -279,6 +255,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_ControllerShoot;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Aim;
     public struct PlayerActions
@@ -287,6 +264,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @ControllerShoot => m_Wrapper.m_Player_ControllerShoot;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -304,6 +282,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @ControllerShoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
+                @ControllerShoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
+                @ControllerShoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
@@ -320,6 +301,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ControllerShoot.started += instance.OnControllerShoot;
+                @ControllerShoot.performed += instance.OnControllerShoot;
+                @ControllerShoot.canceled += instance.OnControllerShoot;
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
@@ -334,6 +318,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnControllerShoot(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
     }
