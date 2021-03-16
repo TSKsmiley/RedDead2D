@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
         if (Time.time >= nextShootTime) 
         {
             Vector2 controllerDir = playerInput.Player.Aim.ReadValue<Vector2>();
-            if (controllerDir == new Vector2(0,0)) controllerDir = new Vector2(1,0);
+            if (controllerDir == new Vector2(0,0)) return;
 
             GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             g.GetComponent<Bullet>().MoveBullet(controllerDir.normalized);
-
+            
             nextShootTime = Time.time + 1f / shootRate;
         }
     }
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
 
-        Vector2 aimInput = playerInput.Player.Aim.ReadValue<Vector2>();
+        Vector2 aimInput = playerInput.Player.Aim.ReadValue<Vector2>().normalized;
         if (aimInput != new Vector2(0,0)) {
             aimAssist.SetActive(true);
             aimAssist.transform.localPosition = aimInput * new Vector2(5f,5f) + new Vector2(0,2.5f);

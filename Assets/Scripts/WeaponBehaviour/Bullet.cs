@@ -10,8 +10,26 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
 
+    private void Start() {
+        Destroy(this, 3f);
+    }
+
     public void MoveBullet(Vector3 pos)
     {
         rb.velocity = pos * speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (!other.CompareTag("EnterBuilding"))
+        {
+            if (!other.CompareTag("NPC"))
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                this.GetComponent<SpriteRenderer>().enabled = false;
+                Destroy(this, 1f);
+            }
+        }
+        
     }
 }
