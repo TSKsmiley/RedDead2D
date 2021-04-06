@@ -6,7 +6,7 @@ using UnityEngine;
 namespace QuestSystem
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "QuestObject", menuName = "Quest/DialogueQuest", order = 0)]
+    [CreateAssetMenu(fileName = "DialogueQuestObject", menuName = "Quest/DialogueQuest", order = 0)]
     public class DialogueQuest : ScriptableObject
     {
         // - - - PROPERTIES - - - 
