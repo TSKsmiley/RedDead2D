@@ -10,7 +10,10 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage) {
         if (health <= 0) {
             KillQuest activeQ = (KillQuest)QuestManager.instance.GetActive();
-            if (this.gameObject.name == activeQ.target.name) QuestManager.instance.CompleteActive();
+            if (this.gameObject.name == activeQ.target.name) {
+                if (activeQ.dialogue.Length != 0) DialogueManager.instance.StartDialogue(activeQ.dialogue[0]);
+                QuestManager.instance.CompleteActive();
+            }
             Destroy(this.gameObject);
         }
 

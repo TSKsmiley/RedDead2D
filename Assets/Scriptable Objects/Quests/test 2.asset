@@ -16,4 +16,5 @@ MonoBehaviour:
   Description: Animal outside town
   Objective: Kill deer
   target: {fileID: 9219011335627013502, guid: e97ef96c656d2604eb1262022113373b, type: 3}
-  dialogue: []
+  dialogue:
+  - {fileID: 11400000, guid: 4f2583e91bbc9b64cb3ec16a24d4eda8, type: 2}
