@@ -28,6 +28,10 @@ public class Bullet : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 this.GetComponent<SpriteRenderer>().enabled = false;
                 Destroy(this, 1f);
+
+                if (other.CompareTag("Enemy")) {
+                    other.GetComponent<Enemy>().TakeDamage(20);
+                }
             }
         }
         

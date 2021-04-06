@@ -14,7 +14,7 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI QuestObjective;
     public TextMeshProUGUI QuestDescription;
     
-    public List<DialogueQuest> AllQuests = new List<DialogueQuest>();
+    public List<ScriptableObject> AllQuests = new List<ScriptableObject>();
 
     public bool isStoryFinished = false;
     
@@ -36,10 +36,7 @@ public class QuestManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        SetUI();
-    }
+    void Start() => SetUI();
 
     public void CompleteActive()
     {
@@ -53,7 +50,7 @@ public class QuestManager : MonoBehaviour
         SetUI();
     }
 
-    public DialogueQuest GetActive()
+    public ScriptableObject GetActive()
     {
         return AllQuests[ActiveQuest];
     }
@@ -62,9 +59,11 @@ public class QuestManager : MonoBehaviour
     {
         try
         {
-            QuestName.text = AllQuests[ActiveQuest].Name;
-            QuestObjective.text = $"Objective: {AllQuests[ActiveQuest].Objective}";
-            QuestDescription.text = AllQuests[ActiveQuest].Description;
+            var questToDisplay = (dynamic)AllQuests[ActiveQuest];
+            
+            QuestName.text = questToDisplay.Name;
+            QuestObjective.text = $"Objective: {questToDisplay.Objective}";
+            QuestDescription.text = questToDisplay.Description;
         }
         catch
         {

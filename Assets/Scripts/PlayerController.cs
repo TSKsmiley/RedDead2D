@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using QuestSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,8 +43,8 @@ public class PlayerController : MonoBehaviour
 	private void ControllerShoot(InputAction.CallbackContext obj) 
     {
         if (Time.time >= nextShootTime) 
-        {
-            Vector2 controllerDir = playerInput.Player.Aim.ReadValue<Vector2>();
+        {   
+            Vector2 controllerDir = playerInput.Player.ControllerAim.ReadValue<Vector2>();
             if (controllerDir == new Vector2(0,0)) return;
 
             GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
@@ -78,7 +79,11 @@ public class PlayerController : MonoBehaviour
         
         if (QuestManager.instance.isStoryFinished == false)
         {
-            if (currentTrigger.name == QuestManager.instance.GetActive().NPC.name) QuestManager.instance.GetActive().NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
+            DialogueQuest activeQ = (DialogueQuest)QuestManager.instance.GetActive();
+            if (currentTrigger.name == activeQ.NPC.name) {
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
+            }
         }
         
         // ALL INTERACTABLE PLACES GO HERE
@@ -92,19 +97,22 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
+
 	void FixedUpdate()
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
 
-        Vector2 aimInput = playerInput.Player.Aim.ReadValue<Vector2>().normalized;
+        Vector2 aimInput = playerInput.Player.ControllerAim.ReadValue<Vector2>().normalized;
+
+        // If the player is aiming using a controller
         if (aimInput != new Vector2(0,0)) {
-            aimAssist.SetActive(true);
-            aimAssist.transform.localPosition = aimInput * new Vector2(5f,5f) + new Vector2(0,2.5f);
+            aimAssist.SetActive(true); // Enable aimassist
+            aimAssist.transform.localPosition = aimInput * new Vector2(5f,5f) + new Vector2(0,2.5f); // Move the aimassist prefab depending on the input
         }
+        // If the player is not aiming
         else {
-            aimAssist.SetActive(false);
+            aimAssist.SetActive(false); // Don't show aimassist
         }
         
     }

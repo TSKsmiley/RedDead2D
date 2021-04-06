@@ -38,9 +38,17 @@
                     "interactions": ""
                 },
                 {
+                    "name": "ControllerAim",
+                    "type": "PassThrough",
+                    "id": "6ae7644c-e8b0-4e7e-8581-a0b0a88a6a72",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Aim",
                     "type": "PassThrough",
-                    "id": "c6fa2cd7-cf78-420a-95b0-52d5e44a1f37",
+                    "id": "67ea40f7-9633-435a-85f2-17d3d4ca0fc3",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -148,34 +156,34 @@
                 },
                 {
                     "name": "",
-                    "id": "c1876bfe-834d-49c4-863b-fac6d6a635c9",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bbf8a245-b046-4226-8f72-229965e67d61",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "aaec98ba-ed76-4cfc-9354-4226bead63f7",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ControllerShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "510c6eb0-6b1d-4da8-8393-debfa41e725d",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ControllerAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0afdf319-02e7-48a8-8102-0c91f7b1c459",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

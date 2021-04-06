@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using QuestSystem;
 
 public class DialogueManager : MonoBehaviour {
     public float typeDelay = 0.2f;
@@ -157,6 +159,10 @@ public class DialogueManager : MonoBehaviour {
     }
 
     // Animate the dialoguebox causing it to exit the screen
-    void EndDialogue() => animator.SetBool("IsOpen", false);
+    void EndDialogue() {
+        QuestManager.instance.CompleteActive();
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        animator.SetBool("IsOpen", false);
+    }
 
 }

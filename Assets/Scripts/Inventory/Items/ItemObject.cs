@@ -1,24 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Inventory.Items;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-public class ItemObject : MonoBehaviour
+namespace Inventory
 {
-    public Item item;
-
-    public TextMeshProUGUI name;
-    public SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
-    void Start()
+    public class ItemObject : MonoBehaviour
     {
-        
-    }
+        public Item item;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public TextMeshProUGUI name;
+        public SpriteRenderer spriteRenderer;
+        // Start is called before the first frame update
+        void Start()
+        {
         
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
     }
 }
