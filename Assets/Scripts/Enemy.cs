@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using QuestSystem;
+
+public class Enemy : MonoBehaviour
+{
+    private int health = 100;
+
+    public void TakeDamage(int damage) {
+        if (health <= 0) {
+            KillQuest activeQ = (KillQuest)QuestManager.instance.GetActive();
+            if (this.gameObject.name == activeQ.target.name) QuestManager.instance.CompleteActive();
+            Destroy(this.gameObject);
+        }
+
+        health -= damage;
+    }
+}

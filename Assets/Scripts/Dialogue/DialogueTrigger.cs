@@ -13,7 +13,6 @@ public class DialogueTrigger : MonoBehaviour {
         {
             DialogueQuest activeQuest = (DialogueQuest)QuestManager.instance.GetActive();
             DialogueManager.instance.StartDialogue(activeQuest.dialogue[0]);
-            QuestManager.instance.CompleteActive();
         }
     }
 }

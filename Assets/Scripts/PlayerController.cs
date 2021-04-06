@@ -80,7 +80,10 @@ public class PlayerController : MonoBehaviour
         if (QuestManager.instance.isStoryFinished == false)
         {
             DialogueQuest activeQ = (DialogueQuest)QuestManager.instance.GetActive();
-            if (currentTrigger.name == activeQ.NPC.name) activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
+            if (currentTrigger.name == activeQ.NPC.name) {
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
+            }
         }
         
         // ALL INTERACTABLE PLACES GO HERE
