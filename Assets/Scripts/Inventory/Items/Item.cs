@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Inventory.Items
+namespace Inventory
 {
-    [CreateAssetMenu(fileName = "Item", menuName = "Items/item")]
-    public class Item : ScriptableObject, IItem
+    [CreateAssetMenu(fileName = "Item")]
+    public class Item : ScriptableObject
     {
-        [field: SerializeField,InspectorName("Name")]
-        public string itemName { get; set; }
-        
-        [field: SerializeField]
-        public string description { get; set; }
-        
-        [field: SerializeField]
-        public typeEnum type { get; set; }
-        
-        [field: SerializeField]
-        public Sprite sprite { get; set; }
+        public string itemName;
+
+        public string description;
+
+        public itemTypeEnum type;
+
+        public Sprite sprite;
 
         public Item()
         {
-            type = typeEnum.BasicItem;
+            type = itemTypeEnum.BASIC;
+        }
+        
+        public enum itemTypeEnum
+        {
+            BASIC,
+            MELEE,
+            RANGED
         }
     }
 }

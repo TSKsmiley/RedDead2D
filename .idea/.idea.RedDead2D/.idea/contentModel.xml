@@ -32,7 +32,6 @@
           <e p="Inventory" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="Items" t="Include">
-              <e p="IItem.cs" t="Include" />
               <e p="Item.cs" t="Include" />
               <e p="ItemObject.cs" t="Include" />
             </e>
