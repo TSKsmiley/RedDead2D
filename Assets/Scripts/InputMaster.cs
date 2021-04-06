@@ -51,9 +51,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""ControllerAim"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6ae7644c-e8b0-4e7e-8581-a0b0a88a6a72"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Aim"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""c6fa2cd7-cf78-420a-95b0-52d5e44a1f37"",
+                    ""id"": ""67ea40f7-9633-435a-85f2-17d3d4ca0fc3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -161,34 +169,34 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c1876bfe-834d-49c4-863b-fac6d6a635c9"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bbf8a245-b046-4226-8f72-229965e67d61"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""aaec98ba-ed76-4cfc-9354-4226bead63f7"",
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ControllerShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""510c6eb0-6b1d-4da8-8393-debfa41e725d"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ControllerAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0afdf319-02e7-48a8-8102-0c91f7b1c459"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -203,6 +211,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_ControllerShoot = m_Player.FindAction("ControllerShoot", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_ControllerAim = m_Player.FindAction("ControllerAim", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
     }
 
@@ -257,6 +266,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_ControllerShoot;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_ControllerAim;
     private readonly InputAction m_Player_Aim;
     public struct PlayerActions
     {
@@ -266,6 +276,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @ControllerShoot => m_Wrapper.m_Player_ControllerShoot;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @ControllerAim => m_Wrapper.m_Player_ControllerAim;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -288,6 +299,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @ControllerAim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
+                @ControllerAim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
+                @ControllerAim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
                 @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
@@ -307,6 +321,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @ControllerAim.started += instance.OnControllerAim;
+                @ControllerAim.performed += instance.OnControllerAim;
+                @ControllerAim.canceled += instance.OnControllerAim;
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
@@ -320,6 +337,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnControllerShoot(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnControllerAim(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
     }
 }

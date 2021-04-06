@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QuestSystem;
 
 public class DialogueTrigger : MonoBehaviour {
 
@@ -10,8 +11,8 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (DialogueManager.instance.isDialogueStarted == false)
         {
-            DialogueManager.instance.StartDialogue(QuestManager.instance.GetActive().dialogue[0]);
-            QuestManager.instance.CompleteActive();
+            DialogueQuest activeQuest = (DialogueQuest)QuestManager.instance.GetActive();
+            DialogueManager.instance.StartDialogue(activeQuest.dialogue[0]);
         }
     }
 }
