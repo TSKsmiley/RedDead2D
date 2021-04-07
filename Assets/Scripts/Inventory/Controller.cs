@@ -7,10 +7,13 @@ namespace Inventory
 {
     public class Controller : MonoBehaviour
     {
-        public static int InventorySize = 35;
+        public static int InventorySize = 36;
         public GameObject UIObjectsParrent;
         public List<ItemObject> UIObjects = new List<ItemObject>();
+        public List<ScriptableObject> StartingItems = new List<ScriptableObject>();
         public ItemStack[] Inventory = new ItemStack[InventorySize];
+
+        public GameObject InvGui;
 
         public void Start()
         {
@@ -18,7 +21,13 @@ namespace Inventory
             {
                 UIObjects.Add(item);
             }
-            refreshUI();
+
+            for (int i = 0; i < StartingItems.Count; i++)
+            {
+                Inventory[i] = new ItemStack(StartingItems[i] as IItem);
+            }
+            
+            RefreshUI();
         }
 
         public bool hasItem(IItem item)
@@ -42,11 +51,21 @@ namespace Inventory
             return results;
         }
 
-        public void refreshUI()
+        public void CloseInv()
+        {
+            InvGui.SetActive(false);
+        }
+
+        public void OpenInv()
+        {
+            InvGui.SetActive(true);
+        }
+        
+        public void RefreshUI()
         {
             for (int i = 0; i < InventorySize; i++)
             {
-                if(Inventory[i] == null)
+                if(Inventory[i].Item == null) continue;
                 UIObjects[i].Item = Inventory[i].Item;
                 UIObjects[i].UpdateUI();
             }

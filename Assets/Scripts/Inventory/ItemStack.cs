@@ -3,7 +3,7 @@ using static Inventory.Interfaces;
 
 namespace Inventory
 {
-    public class ItemStack : MonoBehaviour
+    public class ItemStack
     {
         public IItem Item;
         public int Quantity;
