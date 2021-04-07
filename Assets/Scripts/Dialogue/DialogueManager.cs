@@ -34,6 +34,8 @@ public class DialogueManager : MonoBehaviour {
     public bool isInChoice = false;
     public static DialogueManager instance;
     
+    public Rigidbody2D playerRB;
+
     private void Awake()
     {
         if (instance == null)
@@ -59,6 +61,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
+        playerRB.constraints = RigidbodyConstraints2D.FreezeAll;
         isDialogueStarted = true;
         animator.SetBool("IsOpen", true); // Animate the dialogue 
 
@@ -161,7 +164,7 @@ public class DialogueManager : MonoBehaviour {
     // Animate the dialoguebox causing it to exit the screen
     void EndDialogue() {
         QuestManager.instance.CompleteActive();
-        GameObject.Find("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        playerRB.constraints = RigidbodyConstraints2D.None;
         animator.SetBool("IsOpen", false);
     }
 

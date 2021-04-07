@@ -76,14 +76,11 @@ public class PlayerController : MonoBehaviour
     private void Interact(InputAction.CallbackContext obj)
     {
         if(DebugMode)Debug.Log("Interaction! current trigger: " + currentTrigger.tag);
-        
+
         if (QuestManager.instance.isStoryFinished == false)
         {
-            DialogueQuest activeQ = (DialogueQuest)QuestManager.instance.GetActive();
-            if (currentTrigger.name == activeQ.NPC.name) {
-                rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
-            }
+            DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
+            if (currentTrigger.name == activeQ.NPC.name) activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
         
         // ALL INTERACTABLE PLACES GO HERE
