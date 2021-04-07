@@ -10,6 +10,10 @@ namespace Inventory {
             string name {get;set;}
             string description {get;set;}
             int goldValue {get;set;}
+            
+            Sprite sprite { get; set; }
+            
+            bool stackable { get; set; }
 
             void Equip();
         }
