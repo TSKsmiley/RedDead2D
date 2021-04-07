@@ -165,6 +165,7 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue() {
         QuestManager.instance.CompleteActive();
         playerRB.constraints = RigidbodyConstraints2D.None;
+        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetBool("IsOpen", false);
     }
 
