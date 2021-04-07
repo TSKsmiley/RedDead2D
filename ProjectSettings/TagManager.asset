@@ -48,6 +48,9 @@ TagManager:
   - name: Tilemaps
     uniqueID: 1604778517
     locked: 0
+  - name: Mountains
+    uniqueID: 587106313
+    locked: 0
   - name: Folliage
     uniqueID: 4290015711
     locked: 0
