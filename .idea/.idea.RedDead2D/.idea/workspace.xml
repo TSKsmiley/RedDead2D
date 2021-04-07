@@ -26,16 +26,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Inventory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Inventory.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/ItemObject.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/ItemObject.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Inventory_Test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Inventory_Test.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/IItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/IItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +62,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
       </list>
     </option>
   </component>
@@ -109,6 +119,8 @@
       <workItem from="1615448344945" duration="1812000" />
       <workItem from="1615476017817" duration="440000" />
       <workItem from="1617693799452" duration="6162000" />
+      <workItem from="1617778730323" duration="50000" />
+      <workItem from="1617779282752" duration="5177000" />
     </task>
     <task id="LOCAL-00001" summary="bruh">
       <created>1615289750821</created>
@@ -161,28 +173,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="m,erge" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1368" y="165" key="#Plugins" timestamp="1617778781925">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1368" y="165" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1617778781925" />
+    <state x="755" y="191" key="RiderGenerateDialog" timestamp="1617780876321">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="755" y="191" key="RiderGenerateDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617780876321" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1617700653981">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617700653981" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs</url>
-          <line>17</line>
-          <properties documentPath="C:\Users\arnar\Documents\!Code\RedDead2D\Assets\Scripts\Inventory\Controller.cs" initialLine="16">
-            <startOffsets>
-              <option value="417" />
-            </startOffsets>
-            <endOffsets>
-              <option value="430" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
