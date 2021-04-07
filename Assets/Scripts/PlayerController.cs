@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
                 DialogueManager.instance.DisplayNextSentence();
                 return;
             }
-            
+
             DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
             if (currentTrigger.name == activeQ.NPC.name) activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
@@ -93,9 +93,6 @@ public class PlayerController : MonoBehaviour
         {
             case "Saloon":
                 //TODO: Saloon code
-                break;
-            case "NPC":
-                DialogueManager.instance.DisplayNextSentence();
                 break;
         }
     }
