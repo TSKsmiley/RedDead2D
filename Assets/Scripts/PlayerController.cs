@@ -79,6 +79,11 @@ public class PlayerController : MonoBehaviour
 
         if (QuestManager.instance.isStoryFinished == false)
         {
+            if (DialogueManager.instance.isDialogueStarted == true) {
+                DialogueManager.instance.DisplayNextSentence();
+                return;
+            }
+            
             DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
             if (currentTrigger.name == activeQ.NPC.name) activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
         }

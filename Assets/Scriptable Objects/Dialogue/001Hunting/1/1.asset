@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  dialogueSegments:
+  - speakerName: Zombie Bob
+    dialogueText: Hello traveller!
+    choices: []
+  - speakerName: Zombie Bob
+    dialogueText: Name's John. Would I interest you in a job? There is good money
+      to be made
+    choices: []
+  - speakerName: Sans
+    dialogueText: What's the job?
+    choices: []
+  - speakerName: John
+    dialogueText: Lurking in the forest is a very dangerous bear, I have attempted
+      to kill it multiple times.
+    choices: []
+  - speakerName: John
+    dialogueText: But without luck....
+    choices: []
+  - speakerName: John
+    dialogueText: It almost took my arm. look!
+    choices: []
+  - speakerName: Sans
+    dialogueText: '*looks at arm* nah that doesn''t look too bad. More important
+      question is, why are you all green?'
+    choices: []
+  - speakerName: John
+    dialogueText: Well the bear swallowed me alive!
+    choices: []
+  - speakerName: John
+    dialogueText: But I brought my stick, so I poked its stomach until it finally
+      puked me out
+    choices: []
+  - speakerName: Sans
+    dialogueText: 'Eww. How come you not smell of puke then?
+
+'
+    choices: []
+  - speakerName: John
+    dialogueText: 'This happened years ago, I have showered ever since but the color
+      never disappeared D:
+
+'
+    choices: []
+  - speakerName: John
+    dialogueText: So go to the forest, kill the bear and I will pay you handsomely
+    choices:
+    - dialogueChoice: Pay me with your green gold?
+      followOnDialogue: {fileID: 11400000, guid: 93cba7746c7dba94eb5c8641894c7d8c,
+        type: 2}
+    - dialogueChoice: Sure
+      followOnDialogue: {fileID: 11400000, guid: 4f2583e91bbc9b64cb3ec16a24d4eda8,
+        type: 2}

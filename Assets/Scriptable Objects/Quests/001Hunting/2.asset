@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710050a32afb4e7479629dab299a2ba8, type: 3}
-  m_Name: test 2
+  m_Name: 2
   m_EditorClassIdentifier: 
-  Name: Stonks
-  Description: Animal outside town
-  Objective: Kill deer
+  Name: The legendary bear
+  Description: According to the myths it has been alive for decades
+  Objective: Hunt for a bear in a nearby forest
   target: {fileID: 9219011335627013502, guid: e97ef96c656d2604eb1262022113373b, type: 3}
   dialogue:
-  - {fileID: 11400000, guid: 4f2583e91bbc9b64cb3ec16a24d4eda8, type: 2}
+  - {fileID: 11400000, guid: 944931ead8ad401439ef47f4351792d1, type: 2}

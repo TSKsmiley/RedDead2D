@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
-  m_Name: Yes
+  m_Name: 2
   m_EditorClassIdentifier: 
   dialogueSegments:
-  - speakerName: Fred
-    dialogueText: Lezz gooo commiting neckrope is tha best!
+  - speakerName: Sans
+    dialogueText: Phew, almost ran out of bullets
+    choices: []
+  - speakerName: Sans
+    dialogueText: This beast is going to take forever to skin
     choices: []

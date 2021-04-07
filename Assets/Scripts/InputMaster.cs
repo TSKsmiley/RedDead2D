@@ -169,8 +169,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""aaec98ba-ed76-4cfc-9354-4226bead63f7"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""id"": ""779cb7e3-be6e-4c67-8430-db795f5b464a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -18,6 +18,8 @@ namespace QuestSystem
         public int RewardMoney;
 
         public GameObject NPC;
+
+        public GameObject QuestIcon;
         public Dialogue[] dialogue;
 
         //TODO: RewardItem (item class not yet impemented)

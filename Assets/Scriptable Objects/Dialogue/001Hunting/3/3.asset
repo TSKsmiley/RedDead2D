@@ -10,9 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
-  m_Name: No
+  m_Name: 3
   m_EditorClassIdentifier: 
   dialogueSegments:
-  - speakerName: Fred
-    dialogueText: You chose to not commit neckrope. Why the fuck did you choose that?
+  - speakerName: John
+    dialogueText: We meet again traveller
+    choices: []
+  - speakerName: Sans
+    dialogueText: I guess so..
+    choices: []
+  - speakerName: John
+    dialogueText: How did it go?
+    choices: []
+  - speakerName: Sans
+    dialogueText: Went fine, almost ran out of bullets tho
+    choices: []
+  - speakerName: John
+    dialogueText: Close one then! Here's your reward
     choices: []
