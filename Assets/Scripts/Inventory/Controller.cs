@@ -1,36 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.Serialization;
 using static Inventory.Interfaces;
 
 namespace Inventory
 {
     public class Controller : MonoBehaviour
     {
+        public List<ScriptableObject> startingItems = new List<ScriptableObject>();
+        
+        [Header("UI Parrents")] //UI Parrents
+        public GameObject invGui;
+        public GameObject hotbarGui;
+        
+        
+        
+        [Header("Main inv")] //Main inv
         public static int InventorySize = 36;
-        public GameObject UIObjectsParrent;
-        public List<ItemObject> UIObjects = new List<ItemObject>();
-        public List<ScriptableObject> StartingItems = new List<ScriptableObject>();
         public ItemStack[] Inventory = new ItemStack[InventorySize];
+        [SerializeField][Range(0,8)]private int selectedIndex = 0;
+        
+        
+        
+        [Header("Main inv UI")] //Main inv
+        public GameObject uiObjectsParrent;
+        public List<ItemObject> uiObjects = new List<ItemObject>();
+        
 
-        public GameObject InvGui;
-
+        
+        [Header("Hotbar UI")] // Hotbar vars
+        public GameObject hotbarObjectsParrent;
+        public RectTransform selectedRect;
+        public List<GameObject> hotbarObjects = new List<GameObject>();
+       
+        
         public void Start()
         {
-            foreach (var item in UIObjectsParrent.GetComponentsInChildren<ItemObject>())
+            InitializeUI();
+            
+            for (int i = 0; i < startingItems.Count; i++)
             {
-                UIObjects.Add(item);
-            }
-
-            for (int i = 0; i < StartingItems.Count; i++)
-            {
-                Inventory[i] = new ItemStack(StartingItems[i] as IItem);
+                Inventory[i] = new ItemStack(startingItems[i] as IItem);
             }
             
             RefreshUI();
+            Select(0);
         }
 
-        public bool hasItem(IItem item)
+        private void InitializeUI()
+        {
+            foreach (var item in uiObjectsParrent.GetComponentsInChildren<ItemObject>())
+            {
+                uiObjects.Add(item);
+            }
+
+            foreach (var item in hotbarObjectsParrent.GetComponentsInChildren<ItemObject>())
+            {
+                hotbarObjects.Add(item.gameObject);
+            }
+        }
+
+        public bool HasItem(IItem item)
         {
             foreach (ItemStack currItem in Inventory)
             {
@@ -40,7 +72,12 @@ namespace Inventory
             return false;
         }
 
-        public List<int> findItem(IItem item)
+        /// <summary>
+        /// Finds all instances of a given item in the inventory
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>a list of indexes where the item exists</returns>
+        public List<int> FindItem(IItem item)
         {
             List<int> results = new List<int>();
             for (int i = 0; i < Inventory.Length; i++)
@@ -53,22 +90,64 @@ namespace Inventory
 
         public void CloseInv()
         {
-            InvGui.SetActive(false);
+            invGui.SetActive(false);
+            hotbarGui.SetActive(true);
         }
 
         public void OpenInv()
         {
-            InvGui.SetActive(true);
+            invGui.SetActive(true);
+            hotbarGui.SetActive(false);
+        }
+
+        public void Select(int i)
+        {
+            selectedIndex = i;
+            selectedRect.position = hotbarObjects[i].GetComponent<RectTransform>().position;
+        }
+        
+        public void SelectNext()
+        {
+            selectedIndex = selectedIndex == 8 ? 0 : selectedIndex++;
+            
+            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
+        }
+
+        public void SelectPrevious()
+        {
+            selectedIndex = selectedIndex == 0 ? 8 : selectedIndex--;
+            
+            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
+        }
+        
+        public ItemStack GetSelectedItem()
+        {
+            return Inventory[selectedIndex];
+        }
+        public int GetSelectedIndex()
+        {
+            return selectedIndex;
         }
         
         public void RefreshUI()
         {
+            
             for (int i = 0; i < InventorySize; i++)
             {
-                if(Inventory[i].Item == null) continue;
-                UIObjects[i].Item = Inventory[i].Item;
-                UIObjects[i].UpdateUI();
+                if (Inventory[i] != null)
+                {
+                    uiObjects[i].Item = Inventory[i].Item;
+                    uiObjects[i].UpdateUI();
+                }
             }
+            
+            for (int i = 0; i < 9; i++)
+            {
+                if(Inventory[i] == null) continue;
+                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
+                hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
+            }
+            
         }
         
     }
