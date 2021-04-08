@@ -33,8 +33,13 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Interact.performed += Interact;
         playerInput.Player.Shoot.performed += Shoot;
         playerInput.Player.ControllerShoot.performed += ControllerShoot;
+        playerInput.Player.HotbarSel.performed += HotbarSel;
     }
 
+    private void HotbarSel(InputAction.CallbackContext obj)
+    {
+        Debug.Log(obj.control.name);
+    }
 
 	private void Start()
 	{
