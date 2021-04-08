@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour {
     public Button continueButton;
 
     public bool isDialogueStarted = false;
+    public bool isQuestDialogue = false;
     
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
@@ -162,7 +163,7 @@ public class DialogueManager : MonoBehaviour {
 
     // Animate the dialoguebox causing it to exit the screen
     void EndDialogue() {
-        QuestManager.instance.CompleteActive();
+        if (isQuestDialogue == true) QuestManager.instance.CompleteActive();
         playerRB.constraints = RigidbodyConstraints2D.None;
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetBool("IsOpen", false);

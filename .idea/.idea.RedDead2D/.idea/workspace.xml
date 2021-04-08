@@ -26,11 +26,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon_Move.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon_Move.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/ExclamationMark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/ExclamationMark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/QuestionMark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/QuestionMark.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/FuckOff.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/FuckOff.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/IWantToBeAloneRightNow.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/IWantToBeAloneRightNow.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/LeaveMeAlone.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/LeaveMeAlone.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/4.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/4.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/ArrowUpDown.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/ArrowUpDown.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/exclamation-mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/exclamation-mark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/question-mark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/question-mark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/exclamation-mark.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/exclamation-mark.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/question-mark.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/question-mark.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +70,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Unity/2019.4.20f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -53,6 +80,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -74,19 +106,27 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="34952">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds\RedDead2D.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Frede\OneDrive\Skrivebord\Unity Projects\RedDead2D\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="34952" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25884">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="25884" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -108,6 +148,7 @@
       <workItem from="1617693799452" duration="6162000" />
       <workItem from="1617778730323" duration="50000" />
       <workItem from="1617779282752" duration="8255000" />
+      <workItem from="1617871609590" duration="10292000" />
     </task>
     <task id="LOCAL-00001" summary="bruh">
       <created>1615289750821</created>
@@ -125,6 +166,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -240,5 +284,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617795516867" />
+    <state x="603" y="119" width="714" height="801" key="find.popup" timestamp="1617878777443">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="603" y="119" width="714" height="801" key="find.popup/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1617878777443" />
   </component>
 </project>
