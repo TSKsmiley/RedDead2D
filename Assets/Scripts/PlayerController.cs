@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public GameObject aimAssist;
+    public Inventory.Controller invController;
 
     public float shootRate = 2f;
 
@@ -35,11 +36,13 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Shoot.performed += Shoot;
         playerInput.Player.ControllerShoot.performed += ControllerShoot;
         playerInput.Player.HotbarSel.performed += HotbarSel;
+        playerInput.Player.NextHotbar.performed += context => { invController.SelectNext();};
+        playerInput.Player.PrevHotbar.performed += context => { invController.SelectPrevious();};
     }
 
     private void HotbarSel(InputAction.CallbackContext obj)
     {
-        Debug.Log(obj.control.name);
+        invController.Select(Int32.Parse(obj.control.name)-1);
     }
 
 	private void Start()

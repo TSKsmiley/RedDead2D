@@ -73,6 +73,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PrevHotbar"",
+                    ""type"": ""Button"",
+                    ""id"": ""1d4c27db-b74c-4678-b003-909af04d5dd7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NextHotbar"",
+                    ""type"": ""Button"",
+                    ""id"": ""274ca66d-eae5-4f37-bc18-79a6f5a58622"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -306,6 +322,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""HotbarSel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e0437f5-d28d-480b-8496-fad6cdff5fd1"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrevHotbar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08580635-164a-419a-8346-dd92bb8bd8e6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextHotbar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -321,6 +359,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_ControllerAim = m_Player.FindAction("ControllerAim", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_HotbarSel = m_Player.FindAction("HotbarSel", throwIfNotFound: true);
+        m_Player_PrevHotbar = m_Player.FindAction("PrevHotbar", throwIfNotFound: true);
+        m_Player_NextHotbar = m_Player.FindAction("NextHotbar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -377,6 +417,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ControllerAim;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_HotbarSel;
+    private readonly InputAction m_Player_PrevHotbar;
+    private readonly InputAction m_Player_NextHotbar;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -388,6 +430,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @ControllerAim => m_Wrapper.m_Player_ControllerAim;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @HotbarSel => m_Wrapper.m_Player_HotbarSel;
+        public InputAction @PrevHotbar => m_Wrapper.m_Player_PrevHotbar;
+        public InputAction @NextHotbar => m_Wrapper.m_Player_NextHotbar;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -418,6 +462,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @HotbarSel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHotbarSel;
                 @HotbarSel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHotbarSel;
                 @HotbarSel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHotbarSel;
+                @PrevHotbar.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrevHotbar;
+                @PrevHotbar.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrevHotbar;
+                @PrevHotbar.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrevHotbar;
+                @NextHotbar.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
+                @NextHotbar.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
+                @NextHotbar.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -443,6 +493,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @HotbarSel.started += instance.OnHotbarSel;
                 @HotbarSel.performed += instance.OnHotbarSel;
                 @HotbarSel.canceled += instance.OnHotbarSel;
+                @PrevHotbar.started += instance.OnPrevHotbar;
+                @PrevHotbar.performed += instance.OnPrevHotbar;
+                @PrevHotbar.canceled += instance.OnPrevHotbar;
+                @NextHotbar.started += instance.OnNextHotbar;
+                @NextHotbar.performed += instance.OnNextHotbar;
+                @NextHotbar.canceled += instance.OnNextHotbar;
             }
         }
     }
@@ -456,5 +512,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnControllerAim(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnHotbarSel(InputAction.CallbackContext context);
+        void OnPrevHotbar(InputAction.CallbackContext context);
+        void OnNextHotbar(InputAction.CallbackContext context);
     }
 }

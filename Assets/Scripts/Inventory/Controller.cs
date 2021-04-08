@@ -108,14 +108,14 @@ namespace Inventory
         
         public void SelectNext()
         {
-            selectedIndex = selectedIndex == 8 ? 0 : selectedIndex++;
+            selectedIndex = selectedIndex == 8 ? 0 : selectedIndex+1;
             
             selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
         }
 
         public void SelectPrevious()
         {
-            selectedIndex = selectedIndex == 0 ? 8 : selectedIndex--;
+            selectedIndex = selectedIndex == 0 ? 8 : selectedIndex-1;
             
             selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
         }

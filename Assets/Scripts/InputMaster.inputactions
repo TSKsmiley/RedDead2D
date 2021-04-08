@@ -60,6 +60,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "PrevHotbar",
+                    "type": "Button",
+                    "id": "1d4c27db-b74c-4678-b003-909af04d5dd7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "NextHotbar",
+                    "type": "Button",
+                    "id": "274ca66d-eae5-4f37-bc18-79a6f5a58622",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -291,6 +307,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "HotbarSel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e0437f5-d28d-480b-8496-fad6cdff5fd1",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevHotbar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08580635-164a-419a-8346-dd92bb8bd8e6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextHotbar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
