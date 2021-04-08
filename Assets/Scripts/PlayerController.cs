@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         // If the player is aiming using a controller
         if (aimInput != new Vector2(0,0)) {
             aimAssist.SetActive(true); // Enable aimassist
-            aimAssist.transform.localPosition = aimInput * new Vector2(5f,5f) + new Vector2(0,2.5f); // Move the aimassist prefab depending on the input
+            aimAssist.transform.localPosition = aimInput * new Vector2(1f,1f) + new Vector2(0F, 0.4F); // Move the aimassist prefab depending on the input
         }
         // If the player is not aiming
         else {
