@@ -72,7 +72,7 @@
       "dependencies": {}
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "file:F:/Skole/DDU/Eksamensprojekt/2D Extras/2d-extras-master",
+      "version": "file:C:/Users/Benjamin/Desktop/DDU/_Eksamensprojekt/2D Extras/2d-extras-master",
       "depth": 0,
       "source": "local",
       "dependencies": {

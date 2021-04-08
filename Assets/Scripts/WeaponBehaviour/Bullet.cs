@@ -10,8 +10,11 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
 
-    private void Start() {
-        Destroy(this, 3f);
+    public float destroyDelay = 2.5F;
+
+    private void Start() 
+    {
+        StartCoroutine(waitDestroy());
     }
 
     public void MoveBullet(Vector3 pos)
@@ -25,15 +28,27 @@ public class Bullet : MonoBehaviour
         {
             if (!other.CompareTag("NPC"))
             {
-                rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                this.GetComponent<SpriteRenderer>().enabled = false;
-                Destroy(this, 1f);
+				if (!other.CompareTag("Player"))
+				{
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    this.GetComponent<SpriteRenderer>().enabled = false; 
+                    StartCoroutine(waitDestroy());
 
-                if (other.CompareTag("Enemy")) {
-                    other.GetComponent<Enemy>().TakeDamage(20);
-                }
+                    if (other.CompareTag("Enemy")) 
+                    {
+                        other.GetComponent<Enemy>().TakeDamage(20);
+                    }
+				}
+                
             }
         }
         
     }
+
+    private IEnumerator waitDestroy()
+	{
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(this.gameObject);
+	}
+
 }
