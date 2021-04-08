@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using QuestSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -80,24 +81,43 @@ public class PlayerController : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext obj)
     {
+        
         if(DebugMode)Debug.Log("Interaction! current trigger: " + currentTrigger.tag);
 
-        if (QuestManager.instance.isStoryFinished == false)
+        if (DialogueManager.instance.isDialogueStarted == true) {
+            DialogueManager.instance.DisplayNextSentence();
+            return;
+        }
+
+        if (QuestManager.instance.IsDialogueQuest() && currentTrigger != null)
         {
-            if (DialogueManager.instance.isDialogueStarted == true) {
-                DialogueManager.instance.DisplayNextSentence();
+            DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
+            if (currentTrigger.name == activeQ.NPC.name)
+            {
+                activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue(null);
                 return;
             }
-
-            DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
-            if (currentTrigger.name == activeQ.NPC.name) activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
         
+        if (currentTrigger == null) return;
         // ALL INTERACTABLE PLACES GO HERE
         switch (currentTrigger.tag)
         {
             case "Saloon":
                 //TODO: Saloon code
+                break;
+            case "NPC":
+                DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
+                if (diagTrigger.dialogue[0] == null) return;
+                
+                Dialogue diag = diagTrigger.dialogue[Random.Range(0, diagTrigger.dialogue.Length)];
+
+                for (int i = 0; i < diag.dialogueSegments.Length; i++)
+                {
+                    diag.dialogueSegments[i].speakerName = diagTrigger.speakerName;
+                }
+
+                diagTrigger.TriggerDialogue(diag);
                 break;
         }
     }

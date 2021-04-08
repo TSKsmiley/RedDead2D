@@ -5,6 +5,7 @@ using QuestSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Object = System.Object;
 
 public class QuestManager : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI QuestDescription;
     
     public List<ScriptableObject> AllQuests = new List<ScriptableObject>();
+    private GameObject CurrQuestIcon;
 
-    public bool isStoryFinished = false;
-    
+    private bool isStoryComplete = false;
     public static int ActiveQuest = 0;
     public static QuestManager instance;
 
@@ -40,6 +41,7 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteActive()
     {
+        if (IsDialogueQuest()) Destroy(CurrQuestIcon);
         ActiveQuest++;
         SetUI();
     }
@@ -54,25 +56,45 @@ public class QuestManager : MonoBehaviour
     {
         return AllQuests[ActiveQuest];
     }
-    
+
+    public bool IsDialogueQuest()
+    {
+        if (isStoryComplete == true) return false;
+        if ((dynamic)AllQuests[ActiveQuest].GetType() == typeof(DialogueQuest))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     private void SetUI()
     {
         try
         {
-            var questToDisplay = (dynamic)AllQuests[ActiveQuest];
-            
-            Instantiate(questToDisplay.QuestIcon.gameObject, questToDisplay.NPC.transform.position + new Vector2(0,1.5F));
+            var questToDisplay = (dynamic) AllQuests[ActiveQuest];
+        
+            if (IsDialogueQuest())
+            { 
+                GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.NPC.transform.position + new Vector3(0, 1.35f, 0), questToDisplay.NPC.transform.rotation);
+                g.transform.parent = GameObject.Find(questToDisplay.NPC.name).transform;
+                CurrQuestIcon = g;
+            }
+        
+
             QuestName.text = questToDisplay.Name;
             QuestObjective.text = $"Objective: {questToDisplay.Objective}";
             QuestDescription.text = questToDisplay.Description;
         }
-        catch
+        catch (Exception e)
         {
-            isStoryFinished = true;
+            Debug.Log("Story complete " + e.Message);
+            isStoryComplete = true;
             // STORY HAS BEEN COMPLETE
             QuestUIObj.SetActive(false);
         }
-        
     }
     
     // Update is called once per frame
