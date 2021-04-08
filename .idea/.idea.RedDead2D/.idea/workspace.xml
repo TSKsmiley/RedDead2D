@@ -26,39 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon_Move.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/QuestIcon_Move.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/ExclamationMark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/ExclamationMark.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/QuestionMark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/QuestionMark.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/FuckOff.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/FuckOff.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/IWantToBeAloneRightNow.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/IWantToBeAloneRightNow.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/LeaveMeAlone.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Dialogue/NPCInteractions/LeaveMeAlone.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/ArrowUpDown.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/ArrowUpDown.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/exclamation-mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/exclamation-mark.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/question-mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Quest Icons/question-mark.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/exclamation-mark.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/exclamation-mark.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/question-mark.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Quest Icons/question-mark.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +49,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
       </list>
     </option>
   </component>
