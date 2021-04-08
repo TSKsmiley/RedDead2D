@@ -20,6 +20,5 @@ public class UIDialogueOption : MonoBehaviour, ISelectHandler, IDeselectHandler
     }
 
     public void OnSelect(BaseEventData eventData) => gameObject.transform.GetChild(0).gameObject.SetActive(true);
-
     public void OnDeselect(BaseEventData eventData) => gameObject.transform.GetChild(0).gameObject.SetActive(false);
 }

@@ -61,6 +61,7 @@ public class QuestManager : MonoBehaviour
         {
             var questToDisplay = (dynamic)AllQuests[ActiveQuest];
             
+            Instantiate(questToDisplay.QuestIcon.gameObject, questToDisplay.NPC.transform.position + new Vector2(0,1.5F));
             QuestName.text = questToDisplay.Name;
             QuestObjective.text = $"Objective: {questToDisplay.Objective}";
             QuestDescription.text = questToDisplay.Description;
