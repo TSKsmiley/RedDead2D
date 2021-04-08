@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
-using UnityEngine.Events;
 using QuestSystem;
 
 public class DialogueManager : MonoBehaviour {
@@ -147,7 +146,7 @@ public class DialogueManager : MonoBehaviour {
                 GameObject newButton = Instantiate(dialogueOptionsButtonPrefab, dialogueOptionsParent); // We instantiate a button inside the options parent
                 spawnedButtons.Add(newButton); // Then add it to the list (this way we can delete them later to avoid filling up our list excessively and also to avoid duplicate buttons)
                 newButton.GetComponent<UIDialogueOption>().Setup(choice.followOnDialogue); // We call the setup where we pass the followOnDialogue choice
-                newButton.transform.GetChild(0).GetComponent<TMP_Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
+                newButton.transform.GetChild(1).GetComponent<TMP_Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
                 EventSystem.current.SetSelectedGameObject(spawnedButtons[0]);
             }
         }

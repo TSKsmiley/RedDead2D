@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UIDialogueOption : MonoBehaviour
+public class UIDialogueOption : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     // Internal reference
     private Dialogue dialogueObj;
@@ -17,4 +18,8 @@ public class UIDialogueOption : MonoBehaviour
         DialogueManager.instance.HideOptions(); // Call hide options
         DialogueManager.instance.StartDialogue(dialogueObj); // Start the dialogue
     }
+
+    public void OnSelect(BaseEventData eventData) => gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+    public void OnDeselect(BaseEventData eventData) => gameObject.transform.GetChild(0).gameObject.SetActive(false);
 }
