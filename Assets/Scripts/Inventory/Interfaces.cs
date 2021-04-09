@@ -29,6 +29,18 @@ namespace Inventory {
         {
             void TurnIn();
         }
+
+        public interface IRangedWeapon
+        {
+            int chamberSize { get; set; }
+            float travelDistance { get; set; }
+            float shootRate { get; set; }
+            GameObject bulletPrefab { get; set; }
+            Transform firePointPos { get; set; }
+            void Use(InputMaster _playerInput);
+            void ControllerUse(InputMaster _playerInput);
+            void Reload();
+        }
     }
 }
 

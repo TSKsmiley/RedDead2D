@@ -7,13 +7,21 @@ public class UIDialogueOption : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     // Internal reference
     private Dialogue dialogueObj;
+    private Story addStoryObj;
     
     // When setup is called we store the parsed obj as a reference so that when the button has been clicked we can startDialogue with that reference
-    public void Setup(Dialogue _obj) => dialogueObj = _obj; 
+    public void Setup(Dialogue _obj, Story _addStory)
+    {
+        dialogueObj = _obj;
+        addStoryObj = _addStory;
+    }
 
     // Callback for when the button is clicked
     public void SelectOption()
     {
+        // If there is a story object attached we wish to add this to our quests
+        if (addStoryObj != null) QuestManager.instance.AllQuests.AddRange(addStoryObj.story);
+        
         DialogueManager.instance.isInChoice = false;
         DialogueManager.instance.HideOptions(); // Call hide options
         DialogueManager.instance.StartDialogue(dialogueObj); // Start the dialogue

@@ -27,6 +27,16 @@ namespace Inventory
 
         }
 
+        public void Use()
+        {
+            
+        }
+        
+        public void ControllerUse()
+        {
+            
+        }
+
         public void ApplyHealthRegen() 
         {
 
