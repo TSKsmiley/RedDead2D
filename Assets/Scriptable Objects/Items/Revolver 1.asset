@@ -18,3 +18,9 @@ MonoBehaviour:
   <sprite>k__BackingField: {fileID: 21300000, guid: fbe3e4be22875ae4590160ab34cc5a87,
     type: 3}
   <stackable>k__BackingField: 0
+  <chamberSize>k__BackingField: 0
+  <travelDistance>k__BackingField: 0
+  <shootRate>k__BackingField: 0
+  <bulletPrefab>k__BackingField: {fileID: 7463538146015067466, guid: 14d5eee96d854224bb68571e5a36f48b,
+    type: 3}
+  <firePointPos>k__BackingField: {x: 0, y: 0.4}

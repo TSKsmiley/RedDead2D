@@ -36,7 +36,7 @@ namespace Inventory {
             float travelDistance { get; set; }
             float shootRate { get; set; }
             GameObject bulletPrefab { get; set; }
-            Transform firePointPos { get; set; }
+            Vector2 firePointPos { get; set; }
             void Use(InputMaster _playerInput);
             void ControllerUse(InputMaster _playerInput);
             void Reload();

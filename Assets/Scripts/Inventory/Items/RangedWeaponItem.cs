@@ -39,9 +39,11 @@ namespace Inventory
         [field: SerializeField]
         public float shootRate { get; set; }
 
+        [field: SerializeField]
         public GameObject bulletPrefab { get; set; }
 
-        public Transform firePointPos { get; set; }
+        [field: SerializeField]
+        public Vector2 firePointPos { get; set; }
 
         private float nextShootTime = 0;
         
@@ -52,9 +54,9 @@ namespace Inventory
                 Vector2 mousePos = _playerInput.Player.Aim.ReadValue<Vector2>();
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-                Vector2 direction = mousePos - (Vector2)firePointPos.position;
+                Vector2 direction = mousePos - (Vector2)firePointPos;
 
-                GameObject g = Instantiate(bulletPrefab, firePointPos.position, Quaternion.identity);
+                GameObject g = Instantiate(bulletPrefab, firePointPos, Quaternion.identity);
                 g.GetComponent<Bullet>().MoveBullet(direction.normalized);
 
                 nextShootTime = Time.time + 1f / shootRate;
@@ -68,7 +70,7 @@ namespace Inventory
                 Vector2 controllerDir = _playerInput.Player.ControllerAim.ReadValue<Vector2>();
                 if (controllerDir == new Vector2(0,0)) return;
 
-                GameObject g = Instantiate(bulletPrefab, firePointPos.position, Quaternion.identity);
+                GameObject g = Instantiate(bulletPrefab, firePointPos, Quaternion.identity);
                 g.GetComponent<Bullet>().MoveBullet(controllerDir.normalized);
             
                 nextShootTime = Time.time + 1f / shootRate;

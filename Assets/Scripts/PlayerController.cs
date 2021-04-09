@@ -58,8 +58,7 @@ public class PlayerController : MonoBehaviour
     private void Shoot(InputAction.CallbackContext obj)
     {
         Interfaces.IRangedWeapon itemWeapon = invController.GetSelectedItem().Item as Interfaces.IRangedWeapon;
-        Debug.Log(itemWeapon);
-        itemWeapon.Use(playerInput);
+        itemWeapon?.Use(playerInput);
     }
 
     private void Reload(InputAction.CallbackContext obj)

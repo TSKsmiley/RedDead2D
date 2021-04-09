@@ -44,7 +44,7 @@ namespace Inventory
             
             for (int i = 0; i < startingItems.Count; i++)
             {
-                Inventory[i] = new ItemStack(startingItems[i] as IItem);
+                Inventory[i] = new ItemStack(startingItems[i]);
             }
             
             RefreshUI();
@@ -123,7 +123,7 @@ namespace Inventory
             {
                 if (Inventory[i] != null)
                 {
-                    uiObjects[i].Item = Inventory[i].Item;
+                    uiObjects[i].Item = Inventory[i].Item as IItem;
                     uiObjects[i].UpdateUI();
                 }
             }
@@ -131,7 +131,7 @@ namespace Inventory
             for (int i = 0; i < 9; i++)
             {
                 if(Inventory[i] == null) continue;
-                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
+                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item as IItem;
                 hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
             }
             
