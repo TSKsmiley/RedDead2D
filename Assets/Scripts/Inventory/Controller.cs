@@ -50,6 +50,11 @@ namespace Inventory
             Select(0);
         }
 
+
+
+
+        #region Internal
+
         private void InitializeUI()
         {
             foreach (var item in uiObjectsParrent.GetComponentsInChildren<ItemObject>())
@@ -63,31 +68,9 @@ namespace Inventory
             }
         }
 
-        public bool HasItem(IItem item)
-        {
-            foreach (ItemStack currItem in Inventory)
-            {
-                if (currItem.Item.name == item.name) return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Finds all instances of a given item in the inventory
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns>a list of indexes where the item exists</returns>
-        public List<int> FindItem(IItem item)
-        {
-            List<int> results = new List<int>();
-            for (int i = 0; i < Inventory.Length; i++)
-            { 
-                if (Inventory[i].Item.name == item.name) results.Add(i);
-            }
-
-            return results;
-        }
+        #endregion
+        
+        #region hotbar and ui
 
         public void ToggleInv()
         {
@@ -130,14 +113,7 @@ namespace Inventory
             selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
         }
         
-        public ItemStack GetSelectedItem()
-        {
-            return Inventory[selectedIndex];
-        }
-        public int GetSelectedIndex()
-        {
-            return selectedIndex;
-        }
+
         
         public void RefreshUI()
         {
@@ -159,6 +135,51 @@ namespace Inventory
             }
             
         }
+
+        #endregion
+        
+        #region Inventory API
+
+        
+        public ItemStack GetSelectedItem() // NOTE: Untested!
+        {
+            return Inventory[selectedIndex];
+        }
+        
+        
+        public int GetSelectedIndex() // NOTE: Untested!
+        {
+            return selectedIndex;
+        }
+        
+        
+        public bool HasItem(IItem item) // NOTE: Untested!
+        {
+            foreach (ItemStack currItem in Inventory)
+            {
+                if (currItem.Item.name == item.name) return true;
+            }
+
+            return false;
+        }
+        
+        /// <summary>
+        /// Finds all instances of a given item in the inventory
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>a list of indexes where the item exists</returns>
+        public List<int> FindItem(IItem item) // NOTE: Untested!
+        {
+            List<int> results = new List<int>();
+            for (int i = 0; i < Inventory.Length; i++)
+            { 
+                if (Inventory[i].Item.name == item.name) results.Add(i);
+            }
+
+            return results;
+        }
+
+        #endregion
         
     }
 }
