@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  dialogueSegments:
+  - speakerName: ZombieBob
+    dialogueText: Which faction would you choose?
+    choices:
+    - dialogueChoice: The Whitelaws
+      followOnDialogue: {fileID: 11400000, guid: adda70d181926d6489b7acb30e66296b,
+        type: 2}
+      addStory: {fileID: 11400000, guid: 2955fd8f853b2054f8386603562776d3, type: 2}
+    - dialogueChoice: The Iron Wolves
+      followOnDialogue: {fileID: 11400000, guid: f7dbcd67367281f40b0edf244bbac22e,
+        type: 2}
+      addStory: {fileID: 11400000, guid: f958bb080a925424f97b9960e2d7e80d, type: 2}

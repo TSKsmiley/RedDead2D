@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using QuestSystem;
+using UnityEngine.Assertions.Must;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -16,15 +18,11 @@ public class PlayerController : MonoBehaviour
     public GameObject aimAssist;
     public Inventory.Controller invController;
 
-    public float shootRate = 2f;
-
     private InputMaster playerInput;
 
     private Rigidbody2D rb;
     
     private Collider2D currentTrigger = null;
-
-    private float nextShootTime = 0;
 
     void Awake()
     {
@@ -50,34 +48,24 @@ public class PlayerController : MonoBehaviour
 	{
         AudioManager.instance.Play("Music");
 	}
-	private void ControllerShoot(InputAction.CallbackContext obj) 
+	private void ControllerShoot(InputAction.CallbackContext obj)
     {
-        if (Time.time >= nextShootTime) 
-        {   
-            Vector2 controllerDir = playerInput.Player.ControllerAim.ReadValue<Vector2>();
-            if (controllerDir == new Vector2(0,0)) return;
-
-            GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            g.GetComponent<Bullet>().MoveBullet(controllerDir.normalized);
-            
-            nextShootTime = Time.time + 1f / shootRate;
-        }
+        Interfaces.IRangedWeapon itemWeapon = invController.GetSelectedItem().Item as Interfaces.IRangedWeapon;
+        Debug.Log(itemWeapon);
+        itemWeapon.ControllerUse(playerInput);
     }
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        if (Time.time >= nextShootTime) 
-        {
-            Vector2 mousePos = playerInput.Player.Aim.ReadValue<Vector2>();
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Interfaces.IRangedWeapon itemWeapon = invController.GetSelectedItem().Item as Interfaces.IRangedWeapon;
+        itemWeapon?.Use(playerInput);
+    }
 
-            Vector2 direction = mousePos - (Vector2)firePoint.position;
-
-            GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            g.GetComponent<Bullet>().MoveBullet(direction.normalized);
-
-            nextShootTime = Time.time + 1f / shootRate;
-        }
+    private void Reload(InputAction.CallbackContext obj)
+    {
+        ItemStack item = invController.GetSelectedItem();
+        Interfaces.IRangedWeapon weaponItem = item.Item as Interfaces.IRangedWeapon;
+        Debug.Log(weaponItem);
     }
     
     private void OnEnable() => playerInput.Enable();

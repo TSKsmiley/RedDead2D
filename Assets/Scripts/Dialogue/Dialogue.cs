@@ -27,4 +27,5 @@ public struct DialogueChoice
 {
     public string dialogueChoice;
     public Dialogue followOnDialogue;
+    public Story addStory;
 }

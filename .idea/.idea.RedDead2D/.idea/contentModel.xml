@@ -38,12 +38,14 @@
               <e p="Item.cs" t="Include" />
               <e p="ItemObject.cs" t="Include" />
               <e p="QuestItem.cs" t="Include" />
+              <e p="RangedWeaponItem.cs" t="Include" />
             </e>
             <e p="ItemStack.cs" t="Include" />
           </e>
           <e p="PlayerController.cs" t="Include" />
           <e p="Quest" t="Include">
             <e p="QuestManager.cs" t="Include" />
+            <e p="Story.cs" t="Include" />
             <e p="Types" t="Include">
               <e p="DialogueQuest.cs" t="Include" />
               <e p="KillQuest.cs" t="Include" />

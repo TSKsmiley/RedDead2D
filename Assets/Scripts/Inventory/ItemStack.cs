@@ -5,10 +5,10 @@ namespace Inventory
 {
     public class ItemStack
     {
-        public IItem Item;
+        public ScriptableObject Item;
         public int Quantity;
 
-        public ItemStack(IItem item)
+        public ItemStack(ScriptableObject item)
         {
             Item = item;
             Quantity = 1;
