@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.HotbarSel.performed += HotbarSel;
         playerInput.Player.NextHotbar.performed += context => { invController.SelectNext();};
         playerInput.Player.PrevHotbar.performed += context => { invController.SelectPrevious();};
+        playerInput.Player.ToggleInv.performed += context => { invController.ToggleInv(); };
     }
 
     private void HotbarSel(InputAction.CallbackContext obj)

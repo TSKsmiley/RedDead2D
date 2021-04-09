@@ -89,6 +89,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleInv"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d90c988-09f0-41c7-b880-b75e0e150791"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -152,7 +160,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""d209cbad-387e-4401-a82b-6667dd572b91"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -207,7 +215,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""510c6eb0-6b1d-4da8-8393-debfa41e725d"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": """",
                     ""action"": ""ControllerAim"",
                     ""isComposite"": false,
@@ -344,6 +352,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""NextHotbar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35ec3f3b-3892-4205-9482-b3a440c9f720"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInv"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""def57816-56b3-4acc-b374-75303078a091"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInv"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -361,6 +391,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_HotbarSel = m_Player.FindAction("HotbarSel", throwIfNotFound: true);
         m_Player_PrevHotbar = m_Player.FindAction("PrevHotbar", throwIfNotFound: true);
         m_Player_NextHotbar = m_Player.FindAction("NextHotbar", throwIfNotFound: true);
+        m_Player_ToggleInv = m_Player.FindAction("ToggleInv", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -419,6 +450,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_HotbarSel;
     private readonly InputAction m_Player_PrevHotbar;
     private readonly InputAction m_Player_NextHotbar;
+    private readonly InputAction m_Player_ToggleInv;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -432,6 +464,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @HotbarSel => m_Wrapper.m_Player_HotbarSel;
         public InputAction @PrevHotbar => m_Wrapper.m_Player_PrevHotbar;
         public InputAction @NextHotbar => m_Wrapper.m_Player_NextHotbar;
+        public InputAction @ToggleInv => m_Wrapper.m_Player_ToggleInv;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -468,6 +501,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @NextHotbar.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
                 @NextHotbar.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
                 @NextHotbar.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextHotbar;
+                @ToggleInv.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
+                @ToggleInv.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
+                @ToggleInv.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -499,6 +535,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @NextHotbar.started += instance.OnNextHotbar;
                 @NextHotbar.performed += instance.OnNextHotbar;
                 @NextHotbar.canceled += instance.OnNextHotbar;
+                @ToggleInv.started += instance.OnToggleInv;
+                @ToggleInv.performed += instance.OnToggleInv;
+                @ToggleInv.canceled += instance.OnToggleInv;
             }
         }
     }
@@ -514,5 +553,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnHotbarSel(InputAction.CallbackContext context);
         void OnPrevHotbar(InputAction.CallbackContext context);
         void OnNextHotbar(InputAction.CallbackContext context);
+        void OnToggleInv(InputAction.CallbackContext context);
     }
 }

@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ToggleInv",
+                    "type": "Button",
+                    "id": "4d90c988-09f0-41c7-b880-b75e0e150791",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -139,7 +147,7 @@
                     "id": "d209cbad-387e-4401-a82b-6667dd572b91",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": false,
@@ -194,7 +202,7 @@
                     "id": "510c6eb0-6b1d-4da8-8393-debfa41e725d",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "",
                     "action": "ControllerAim",
                     "isComposite": false,
@@ -329,6 +337,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "NextHotbar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35ec3f3b-3892-4205-9482-b3a440c9f720",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleInv",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "def57816-56b3-4acc-b374-75303078a091",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleInv",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

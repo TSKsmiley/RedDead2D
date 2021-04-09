@@ -14,6 +14,7 @@ namespace Inventory
         [Header("UI Parrents")] //UI Parrents
         public GameObject invGui;
         public GameObject hotbarGui;
+        public bool isOpen;
         
         
         
@@ -88,16 +89,25 @@ namespace Inventory
             return results;
         }
 
+        public void ToggleInv()
+        {
+            isOpen = !isOpen;
+            invGui.SetActive(isOpen);
+            hotbarGui.SetActive(!isOpen);
+        }
+        
         public void CloseInv()
         {
             invGui.SetActive(false);
             hotbarGui.SetActive(true);
+            isOpen = false;
         }
 
         public void OpenInv()
         {
             invGui.SetActive(true);
             hotbarGui.SetActive(false);
+            isOpen = true;
         }
 
         public void Select(int i)
