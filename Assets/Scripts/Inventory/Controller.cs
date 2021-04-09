@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -140,6 +141,22 @@ namespace Inventory
         
         #region Inventory API
 
+        /// <summary>
+        /// inserts a item in the next empty space in the inventory
+        /// </summary>
+        /// <param name="newItem"></param>
+        /// <returns>returns the index of the inventory space used | returns -1 if no inventory space is available</returns>
+        public int addItem(ItemStack newItem)
+        {
+            for (int i = 0; i < InventorySize; i++)
+            {
+                if (Inventory[i] != null) continue;
+                Inventory[i] = newItem;
+                return i;
+            }
+
+            return -1;
+        }
         
         public ItemStack GetSelectedItem() // NOTE: Untested!
         {
