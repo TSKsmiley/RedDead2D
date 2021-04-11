@@ -35,7 +35,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ControllerShoot"",
+                    ""name"": ""ControllerUse"",
                     ""type"": ""Button"",
                     ""id"": ""1c730fdf-87a8-44e9-bb31-8a0e5bf0e4d2"",
                     ""expectedControlType"": ""Button"",
@@ -43,7 +43,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""Use"",
                     ""type"": ""Button"",
                     ""id"": ""ea1f2572-d3de-4625-8b3b-5d8fa8fa62c7"",
                     ""expectedControlType"": ""Button"",
@@ -195,7 +195,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -206,7 +206,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ControllerShoot"",
+                    ""action"": ""ControllerUse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -384,8 +384,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_ControllerShoot = m_Player.FindAction("ControllerShoot", throwIfNotFound: true);
-        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_ControllerUse = m_Player.FindAction("ControllerUse", throwIfNotFound: true);
+        m_Player_Use = m_Player.FindAction("Use", throwIfNotFound: true);
         m_Player_ControllerAim = m_Player.FindAction("ControllerAim", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_HotbarSel = m_Player.FindAction("HotbarSel", throwIfNotFound: true);
@@ -443,8 +443,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_ControllerShoot;
-    private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_ControllerUse;
+    private readonly InputAction m_Player_Use;
     private readonly InputAction m_Player_ControllerAim;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_HotbarSel;
@@ -457,8 +457,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @ControllerShoot => m_Wrapper.m_Player_ControllerShoot;
-        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @ControllerUse => m_Wrapper.m_Player_ControllerUse;
+        public InputAction @Use => m_Wrapper.m_Player_Use;
         public InputAction @ControllerAim => m_Wrapper.m_Player_ControllerAim;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @HotbarSel => m_Wrapper.m_Player_HotbarSel;
@@ -480,12 +480,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @ControllerShoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
-                @ControllerShoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
-                @ControllerShoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerShoot;
-                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
-                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
-                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @ControllerUse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerUse;
+                @ControllerUse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerUse;
+                @ControllerUse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerUse;
+                @Use.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
+                @Use.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
+                @Use.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUse;
                 @ControllerAim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
                 @ControllerAim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
                 @ControllerAim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnControllerAim;
@@ -514,12 +514,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @ControllerShoot.started += instance.OnControllerShoot;
-                @ControllerShoot.performed += instance.OnControllerShoot;
-                @ControllerShoot.canceled += instance.OnControllerShoot;
-                @Shoot.started += instance.OnShoot;
-                @Shoot.performed += instance.OnShoot;
-                @Shoot.canceled += instance.OnShoot;
+                @ControllerUse.started += instance.OnControllerUse;
+                @ControllerUse.performed += instance.OnControllerUse;
+                @ControllerUse.canceled += instance.OnControllerUse;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
                 @ControllerAim.started += instance.OnControllerAim;
                 @ControllerAim.performed += instance.OnControllerAim;
                 @ControllerAim.canceled += instance.OnControllerAim;
@@ -546,8 +546,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnControllerShoot(InputAction.CallbackContext context);
-        void OnShoot(InputAction.CallbackContext context);
+        void OnControllerUse(InputAction.CallbackContext context);
+        void OnUse(InputAction.CallbackContext context);
         void OnControllerAim(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnHotbarSel(InputAction.CallbackContext context);

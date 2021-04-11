@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "ControllerShoot",
+                    "name": "ControllerUse",
                     "type": "Button",
                     "id": "1c730fdf-87a8-44e9-bb31-8a0e5bf0e4d2",
                     "expectedControlType": "Button",
@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Use",
                     "type": "Button",
                     "id": "ea1f2572-d3de-4625-8b3b-5d8fa8fa62c7",
                     "expectedControlType": "Button",
@@ -182,7 +182,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -193,7 +193,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "ControllerShoot",
+                    "action": "ControllerUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
-using static Inventory.Interfaces;
 
 namespace Inventory
 {
     public class Controller : MonoBehaviour
     {
-        public List<ScriptableObject> startingItems = new List<ScriptableObject>();
+        public List<Item> startingItems = new List<Item>();
         
         [Header("UI Parrents")] //UI Parrents
         public GameObject invGui;
@@ -29,13 +29,37 @@ namespace Inventory
         public List<ItemObject> uiObjects = new List<ItemObject>();
         
 
-        
+
         [Header("Hotbar UI")] // Hotbar vars
         public GameObject hotbarObjectsParrent;
         public RectTransform selectedRect;
         public List<GameObject> hotbarObjects = new List<GameObject>();
-       
+
+
         
+        [Header("Weapon UI")]
+        public GameObject weaponUI;
+        public TextMeshProUGUI currAmmo;
+        public TextMeshProUGUI chamberSize;
+        
+        
+        
+        public static Controller instance;
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            } 
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            DontDestroyOnLoad(gameObject);
+        }
+
         public void Start()
         {
             InitializeUI();
@@ -62,7 +86,7 @@ namespace Inventory
             }
         }
 
-        public bool HasItem(IItem item)
+        public bool HasItem(Item item)
         {
             foreach (ItemStack currItem in Inventory)
             {
@@ -77,7 +101,7 @@ namespace Inventory
         /// </summary>
         /// <param name="item"></param>
         /// <returns>a list of indexes where the item exists</returns>
-        public List<int> FindItem(IItem item)
+        public List<int> FindItem(Item item)
         {
             List<int> results = new List<int>();
             for (int i = 0; i < Inventory.Length; i++)
@@ -113,8 +137,41 @@ namespace Inventory
         {
             selectedIndex = i;
             selectedRect.position = hotbarObjects[i].GetComponent<RectTransform>().position;
+            
+            ItemStack item = GetSelectedItem();
+            if (item != null)
+            {
+                switch (item.Item.GetType().ToString())
+                {
+                    case "Inventory.RangedWeaponItem":
+                        EnableWeaponUI(item.Item as RangedWeaponItem);
+                        break;
+                    
+                    default:
+                        DisableWeaponUI();
+                        break;
+                }
+            }
         }
-        
+
+        public void EnableWeaponUI(RangedWeaponItem _weapon)
+        {
+            UpdateAmmo(_weapon.currAmmo.ToString(), _weapon.chamberSize.ToString());
+            
+            weaponUI.SetActive(true);
+        }
+
+        public void DisableWeaponUI()
+        {
+            weaponUI.SetActive(false);
+        }
+
+        public void UpdateAmmo(string _currAmmo, string _chamberSize)
+        {
+            currAmmo.text = _currAmmo;
+            chamberSize.text = _chamberSize;
+        }
+
         public void SelectNext()
         {
             selectedIndex = selectedIndex == 8 ? 0 : selectedIndex+1;
@@ -145,7 +202,7 @@ namespace Inventory
             {
                 if (Inventory[i] != null)
                 {
-                    uiObjects[i].Item = Inventory[i].Item as IItem;
+                    uiObjects[i].Item = Inventory[i].Item;
                     uiObjects[i].UpdateUI();
                 }
             }
@@ -153,7 +210,7 @@ namespace Inventory
             for (int i = 0; i < 9; i++)
             {
                 if(Inventory[i] == null) continue;
-                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item as IItem;
+                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
                 hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
             }
             

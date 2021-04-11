@@ -1,13 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Inventory.Interfaces;
 
 namespace Inventory
 {
     public class ItemObject : MonoBehaviour
     {
-        public IItem Item;
+        public Item Item;
 
         public new TextMeshProUGUI name;
         public Image spriteRenderer;

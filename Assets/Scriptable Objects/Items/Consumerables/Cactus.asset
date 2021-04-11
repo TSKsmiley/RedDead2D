@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3226df8692d7024d8b16855af67c01d, type: 3}
+  m_Name: Cactus
+  m_EditorClassIdentifier: 
+  <name>k__BackingField: Cactus
+  <description>k__BackingField: Looks like a pp
+  <goldValue>k__BackingField: 50
+  <sprite>k__BackingField: {fileID: 21300000, guid: 4881e28bb9e9f5c459173bd356d3fba4,
+    type: 3}
+  <stackable>k__BackingField: 0
+  <healthRegen>k__BackingField: 15

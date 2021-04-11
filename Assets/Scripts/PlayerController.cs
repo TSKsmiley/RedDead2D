@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Inventory;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using QuestSystem;
-using UnityEngine.Assertions.Must;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -13,10 +13,9 @@ public class PlayerController : MonoBehaviour
     public bool DebugMode;
     public float speed = 10f;
     
-    public GameObject bulletPrefab;
-    public Transform firePoint;
+    // QOL Features
     public GameObject aimAssist;
-    public Inventory.Controller invController;
+    public GameObject ammo;
 
     private InputMaster playerInput;
 
@@ -31,41 +30,39 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         playerInput.Player.Interact.performed += Interact;
-        playerInput.Player.Shoot.performed += Shoot;
-        playerInput.Player.ControllerShoot.performed += ControllerShoot;
+        playerInput.Player.Use.performed += Use;
+        playerInput.Player.ControllerUse.performed += ControllerUse;
         playerInput.Player.HotbarSel.performed += HotbarSel;
-        playerInput.Player.NextHotbar.performed += context => { invController.SelectNext();};
-        playerInput.Player.PrevHotbar.performed += context => { invController.SelectPrevious();};
-        playerInput.Player.ToggleInv.performed += context => { invController.ToggleInv(); };
+        playerInput.Player.NextHotbar.performed += context => { Inventory.Controller.instance.SelectNext();};
+        playerInput.Player.PrevHotbar.performed += context => { Inventory.Controller.instance.SelectPrevious();};
+        playerInput.Player.ToggleInv.performed += context => { Inventory.Controller.instance.ToggleInv(); };
     }
 
     private void HotbarSel(InputAction.CallbackContext obj)
     {
-        invController.Select(Int32.Parse(obj.control.name)-1);
+        Inventory.Controller.instance.Select(Int32.Parse(obj.control.name)-1);
     }
 
 	private void Start()
 	{
         AudioManager.instance.Play("Music");
 	}
-	private void ControllerShoot(InputAction.CallbackContext obj)
-    {
-        Interfaces.IRangedWeapon itemWeapon = invController.GetSelectedItem().Item as Interfaces.IRangedWeapon;
-        Debug.Log(itemWeapon);
-        itemWeapon.ControllerUse(playerInput);
-    }
 
-    private void Shoot(InputAction.CallbackContext obj)
+    private void ControllerUse(InputAction.CallbackContext obj)
     {
-        Interfaces.IRangedWeapon itemWeapon = invController.GetSelectedItem().Item as Interfaces.IRangedWeapon;
-        itemWeapon?.Use(playerInput);
+        ItemStack item = Inventory.Controller.instance.GetSelectedItem();
+        if (item != null) item.Item.ControllerUse(playerInput, this.gameObject);
+        
+    }
+    private void Use(InputAction.CallbackContext obj)
+    {
+        ItemStack item = Inventory.Controller.instance.GetSelectedItem();
+        if (item != null) item.Item.Use(playerInput, this.gameObject);
     }
 
     private void Reload(InputAction.CallbackContext obj)
     {
-        ItemStack item = invController.GetSelectedItem();
-        Interfaces.IRangedWeapon weaponItem = item.Item as Interfaces.IRangedWeapon;
-        Debug.Log(weaponItem);
+        //invController.GetSelectedItem().Item.
     }
     
     private void OnEnable() => playerInput.Enable();
@@ -114,7 +111,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	void FixedUpdate()
+    void FixedUpdate()
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;

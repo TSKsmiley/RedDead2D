@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Inventory {
+/*namespace Inventory {
     public class Interfaces {
         public interface IItem
         {
@@ -42,5 +42,5 @@ namespace Inventory {
             void Reload();
         }
     }
-}
+}*/
 
