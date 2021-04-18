@@ -32,7 +32,6 @@
           <e p="InputMaster.cs" t="Include" />
           <e p="Inventory" t="Include">
             <e p="Controller.cs" t="Include" />
-            <e p="Interfaces.cs" t="Include" />
             <e p="Items" t="Include">
               <e p="Item Types" t="Include">
                 <e p="Base" t="Include">

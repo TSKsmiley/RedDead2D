@@ -32,7 +32,11 @@ namespace Inventory
         float nextShootTime = 0;
 
         // We need to reset the shoottime as a scriptable object is meant as a datacontainer, therefore the variable will be saved if we don't reset it on startup
-        private void OnEnable() => nextShootTime = 0;
+        private void OnEnable()
+        {
+            nextShootTime = 0;
+            
+        }
         
         public override void Use(InputMaster _playerInput, GameObject _caller)
         {
@@ -72,10 +76,12 @@ namespace Inventory
             }
         }
 
-        private void Reload()
+        public void Reload()
         {
             int bulletsToFill = chamberSize - currAmmo;
-            
+            int removedAmmo = Inventory.Controller.instance.RemoveItems(bulletsToFill , $".{(int)ammoType}");
+            currAmmo += removedAmmo;
+            Inventory.Controller.instance.UpdateAmmo(currAmmo.ToString(), chamberSize.ToString());
         }
         
         public enum AmmoType

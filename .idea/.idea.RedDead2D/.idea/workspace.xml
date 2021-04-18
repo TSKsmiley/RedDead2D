@@ -26,51 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Ammo Types.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Ammo Types/44.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Ammo Types/44.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Consumerables.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Consumerables/Cactus.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Consumerables/Cactus.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base/Item.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/ConsumableItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/ConsumableItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/QuestItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/QuestItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Revolver 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Revolver 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ConsumableItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ConsumableItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/QuestItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/QuestItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RangedWeaponItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RangedWeaponItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,9 +61,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RangedWeaponItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/QuestItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base/Item.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventTriggers.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
@@ -164,7 +134,10 @@
       <workItem from="1617877268577" duration="10435000" />
       <workItem from="1617958664015" duration="1578000" />
       <workItem from="1617964059242" duration="5981000" />
-      <workItem from="1618132121893" duration="11207000" />
+      <workItem from="1618132121893" duration="11538000" />
+      <workItem from="1618152755002" duration="858000" />
+      <workItem from="1618159940341" duration="85000" />
+      <workItem from="1618160040059" duration="7487000" />
     </task>
     <task id="LOCAL-00001" summary="bruh">
       <created>1615289750821</created>
@@ -218,96 +191,5 @@
     <MESSAGE value="bruh" />
     <MESSAGE value="m,erge" />
     <option name="LAST_COMMIT_MESSAGE" value="m,erge" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="163" key="#Plugins" timestamp="1617970562753">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="163" key="#Plugins/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1617970562753" />
-    <state x="-1368" y="165" key="#Plugins/0.0.1920.1050/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1617778781925" />
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom" timestamp="1617797282503">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282503" />
-    <state width="1877" height="240" key="GridCell.Tab.0.center" timestamp="1617797282503">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282503" />
-    <state width="1877" height="240" key="GridCell.Tab.0.left" timestamp="1617797282503">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282503" />
-    <state width="1877" height="240" key="GridCell.Tab.0.right" timestamp="1617797282503">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282503" />
-    <state width="1877" height="240" key="GridCell.Tab.1.bottom" timestamp="1617797282276">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282276" />
-    <state width="1877" height="240" key="GridCell.Tab.1.center" timestamp="1617797282276">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282276" />
-    <state width="1877" height="240" key="GridCell.Tab.1.left" timestamp="1617797282276">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282276" />
-    <state width="1877" height="240" key="GridCell.Tab.1.right" timestamp="1617797282276">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282276" />
-    <state width="1877" height="240" key="GridCell.Tab.2.bottom" timestamp="1617797282277">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282277" />
-    <state width="1877" height="240" key="GridCell.Tab.2.center" timestamp="1617797282277">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282277" />
-    <state width="1877" height="240" key="GridCell.Tab.2.left" timestamp="1617797282276">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282276" />
-    <state width="1877" height="240" key="GridCell.Tab.2.right" timestamp="1617797282277">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.2.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282277" />
-    <state width="1877" height="240" key="GridCell.Tab.3.bottom" timestamp="1617797282278">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282278" />
-    <state width="1877" height="240" key="GridCell.Tab.3.center" timestamp="1617797282278">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282278" />
-    <state width="1877" height="240" key="GridCell.Tab.3.left" timestamp="1617797282278">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282278" />
-    <state width="1877" height="240" key="GridCell.Tab.3.right" timestamp="1617797282278">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="240" key="GridCell.Tab.3.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617797282278" />
-    <state x="755" y="191" key="RiderGenerateDialog" timestamp="1617780876321">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="755" y="191" key="RiderGenerateDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617780876321" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1617700653981">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617700653981" />
-    <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog" timestamp="1617795516867">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617795516867" />
-    <state x="603" y="253" width="714" height="534" key="find.popup" timestamp="1617965602992">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="603" y="253" width="714" height="534" key="find.popup/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1617965602992" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617970544246">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1617970544246" />
   </component>
 </project>

@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
         playerInput.Player.Interact.performed += Interact;
         playerInput.Player.Use.performed += Use;
+        playerInput.Player.Reload.performed += Reload;
         playerInput.Player.ControllerUse.performed += ControllerUse;
         playerInput.Player.HotbarSel.performed += HotbarSel;
         playerInput.Player.NextHotbar.performed += context => { Inventory.Controller.instance.SelectNext();};
@@ -62,7 +63,10 @@ public class PlayerController : MonoBehaviour
 
     private void Reload(InputAction.CallbackContext obj)
     {
-        //invController.GetSelectedItem().Item.
+        Item item = Inventory.Controller.instance.GetSelectedItem()?.Item; // We get the selected item and nullcheck it to avoid errors
+        RangedWeaponItem weapon = item as RangedWeaponItem; // We cast the item to a rangedweapon as we know only rangedweapons are capable of shooting
+        
+        if (weapon != null) weapon.Reload(); // If the weapon is not null (aka we are trying to reload an empty slot or a non ranged weapon) we can safely perform a reload
     }
     
     private void OnEnable() => playerInput.Enable();
@@ -70,7 +74,6 @@ public class PlayerController : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext obj)
     {
-        
         if(DebugMode)Debug.Log("Interaction! current trigger: " + currentTrigger.tag);
 
         if (DialogueManager.instance.isDialogueStarted == true) {
@@ -127,7 +130,6 @@ public class PlayerController : MonoBehaviour
         else {
             aimAssist.SetActive(false); // Don't show aimassist
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

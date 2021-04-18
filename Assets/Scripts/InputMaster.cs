@@ -97,6 +97,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""50a0df85-fa60-4a9e-a126-c67841fdc4e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -180,7 +188,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""706f75d6-9e74-405b-a085-7f6afc336c3c"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -374,6 +382,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""ToggleInv"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7aff3dda-aa36-4c91-8a63-2b94d154dc84"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62ca250d-1979-4938-9564-d1ec87212ba0"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -392,6 +422,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_PrevHotbar = m_Player.FindAction("PrevHotbar", throwIfNotFound: true);
         m_Player_NextHotbar = m_Player.FindAction("NextHotbar", throwIfNotFound: true);
         m_Player_ToggleInv = m_Player.FindAction("ToggleInv", throwIfNotFound: true);
+        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -451,6 +482,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_PrevHotbar;
     private readonly InputAction m_Player_NextHotbar;
     private readonly InputAction m_Player_ToggleInv;
+    private readonly InputAction m_Player_Reload;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -465,6 +497,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @PrevHotbar => m_Wrapper.m_Player_PrevHotbar;
         public InputAction @NextHotbar => m_Wrapper.m_Player_NextHotbar;
         public InputAction @ToggleInv => m_Wrapper.m_Player_ToggleInv;
+        public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +537,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ToggleInv.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
                 @ToggleInv.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
                 @ToggleInv.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleInv;
+                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -538,6 +574,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ToggleInv.started += instance.OnToggleInv;
                 @ToggleInv.performed += instance.OnToggleInv;
                 @ToggleInv.canceled += instance.OnToggleInv;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -554,5 +593,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnPrevHotbar(InputAction.CallbackContext context);
         void OnNextHotbar(InputAction.CallbackContext context);
         void OnToggleInv(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }

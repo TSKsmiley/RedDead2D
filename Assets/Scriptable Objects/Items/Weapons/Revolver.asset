@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 3}
   <stackable>k__BackingField: 0
   <chamberSize>k__BackingField: 6
-  <currAmmo>k__BackingField: 5
+  <currAmmo>k__BackingField: 3
   <ammoType>k__BackingField: 44
   <travelDistance>k__BackingField: 0
   <shootRate>k__BackingField: 4

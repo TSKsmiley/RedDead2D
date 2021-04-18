@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,7 +11,7 @@ namespace Inventory
     {
         public List<Item> startingItems = new List<Item>();
         
-        [Header("UI Parrents")] //UI Parrents
+        [Header("UI Parents")] //UI Parents
         public GameObject invGui;
         public GameObject hotbarGui;
         public bool isOpen;
@@ -111,7 +112,48 @@ namespace Inventory
 
             return results;
         }
+        
+        /// <summary>
+        /// Finds all instances of a given item name in the inventory
+        /// </summary>
+        /// <param name="itemName"></param>
+        /// <returns>a list of indexes where the item exists</returns>
+        public List<int> FindItemByName(string itemName)
+        {
+            List<int> results = new List<int>();
+            for (int i = 0; i < Inventory.Length; i++)
+            {
+                if (Inventory[i]?.Item.name == itemName) results.Add(i);
+            }
 
+            return results;
+        }
+        
+        /// <summary>
+        /// Removes a given amount of items from the inventory
+        /// </summary>
+        /// <returns>An int representing the amount of removed items</returns>
+        public int RemoveItems(int _amount, string _itemName)
+        {
+            int removeCount = 0; // we keep track of how many times we have removed an item
+
+            // We search for some ammo and order it highest to lowest value
+            List<int> results = FindItemByName(_itemName).OrderByDescending(v => v).ToList();
+            
+            if (results.Count == 0) return 0; // If we didn't find any item, simply return 0
+            if (results.Count < _amount) _amount = results.Count; // If what we found is less than what we need, we set what we found to what we need (prevents errors)
+            
+            // Loop through inventory to take items
+            for (int i = 0; i < _amount; i++)
+            {
+                Inventory[results[i]] = null; // Find the item at the index and remove it (by setting it to null)
+                removeCount++; // We just removed something
+            }
+
+            RefreshUI(); // Refresh the UI in order to update the inventory items visually
+            return removeCount; // Return the amount we removed
+        }
+        
         public void ToggleInv()
         {
             isOpen = !isOpen;
@@ -138,6 +180,36 @@ namespace Inventory
             selectedIndex = i;
             selectedRect.position = hotbarObjects[i].GetComponent<RectTransform>().position;
             
+            CheckItemType();
+        }
+
+        public void SelectNext()
+        {
+            selectedIndex = selectedIndex == 8 ? 0 : selectedIndex+1;
+            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
+            
+            CheckItemType();
+        }
+
+        public void SelectPrevious()
+        {
+            selectedIndex = selectedIndex == 0 ? 8 : selectedIndex-1;
+            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
+            
+            CheckItemType();
+        }
+        
+        public ItemStack GetSelectedItem()
+        {
+            return Inventory[selectedIndex];
+        }
+        public int GetSelectedIndex()
+        {
+            return selectedIndex;
+        }
+
+        private void CheckItemType()
+        {
             ItemStack item = GetSelectedItem();
             if (item != null)
             {
@@ -153,7 +225,7 @@ namespace Inventory
                 }
             }
         }
-
+        
         public void EnableWeaponUI(RangedWeaponItem _weapon)
         {
             UpdateAmmo(_weapon.currAmmo.ToString(), _weapon.chamberSize.ToString());
@@ -170,29 +242,6 @@ namespace Inventory
         {
             currAmmo.text = _currAmmo;
             chamberSize.text = _chamberSize;
-        }
-
-        public void SelectNext()
-        {
-            selectedIndex = selectedIndex == 8 ? 0 : selectedIndex+1;
-            
-            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
-        }
-
-        public void SelectPrevious()
-        {
-            selectedIndex = selectedIndex == 0 ? 8 : selectedIndex-1;
-            
-            selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
-        }
-        
-        public ItemStack GetSelectedItem()
-        {
-            return Inventory[selectedIndex];
-        }
-        public int GetSelectedIndex()
-        {
-            return selectedIndex;
         }
         
         public void RefreshUI()

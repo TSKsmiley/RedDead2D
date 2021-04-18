@@ -9,18 +9,22 @@ using QuestSystem;
 
 public class DialogueManager : MonoBehaviour {
     public float typeDelay = 0.2f;
-    public TMP_Text nameText;
-    public TMP_Text dialogueText;
 
     public Animator animator;
+    public Rigidbody2D playerRB;
     
+    [Header("UI Elements")]
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
     public GameObject dialogueOptionsContainer;
     public Transform dialogueOptionsParent;
     public GameObject dialogueOptionsButtonPrefab;
     public Button continueButton;
 
+    [Header("Bools")]
     public bool isDialogueStarted = false;
     public bool isQuestDialogue = false;
+    public bool isInChoice = false;
     
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
@@ -31,11 +35,10 @@ public class DialogueManager : MonoBehaviour {
     private string currSentence;
     private DialogueChoice[] currChoiceArr;
     private bool isTyping = false;
-    public bool isInChoice = false;
+    
+    // Singleton to access non-static methods and variables in other classes
     public static DialogueManager instance;
     
-    public Rigidbody2D playerRB;
-
     private void Awake()
     {
         if (instance == null)
