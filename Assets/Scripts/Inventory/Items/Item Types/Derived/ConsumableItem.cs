@@ -15,7 +15,7 @@ namespace Inventory
         
         public override void ControllerUse(InputMaster _playerInput, GameObject _caller)
         {
-            
+            Debug.Log("consumable controller");
         }
 
         public void ApplyHealthRegen() 
