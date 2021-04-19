@@ -254,13 +254,25 @@ namespace Inventory
                     uiObjects[i].Item = Inventory[i].Item;
                     uiObjects[i].UpdateUI();
                 }
+                else
+                {
+                    uiObjects[i].spriteRenderer.enabled = false;
+                }
             }
             
             for (int i = 0; i < 9; i++)
             {
-                if(Inventory[i] == null) continue;
-                hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
-                hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
+                // if a item is removed from the inventory make sure to actually remove it from the ui by disabling the rendere
+                if (Inventory[i] == null)
+                {
+                    hotbarObjects[i].GetComponent<ItemObject>().spriteRenderer.enabled = false;
+                }
+                else
+                {
+                    hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
+                    hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
+                }
+                
             }
             
         }
