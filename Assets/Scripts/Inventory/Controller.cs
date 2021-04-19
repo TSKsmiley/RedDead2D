@@ -217,6 +217,8 @@ namespace Inventory
             {
                 ////// Stackable items
                 
+                // TODO: make this code for removing items from stacks 
+                
             }
             else
             {
