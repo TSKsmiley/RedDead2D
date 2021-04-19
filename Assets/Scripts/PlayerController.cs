@@ -11,6 +11,9 @@ using Random = UnityEngine.Random;
 public class PlayerController : MonoBehaviour
 {
     public bool DebugMode;
+
+    public bool canShoot = true;
+
     public float speed = 10f;
     
     // QOL Features
@@ -95,9 +98,11 @@ public class PlayerController : MonoBehaviour
         // ALL INTERACTABLE PLACES GO HERE
         switch (currentTrigger.tag)
         {
-            case "Saloon":
-                //TODO: Saloon code
+            case "Teleport": //Enter and exit buildings with transition
+                currentTrigger.GetComponent<BuildingInfo>().Teleport(this.transform, this);
+
                 break;
+
             case "NPC":
                 DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
                 if (diagTrigger.dialogue[0] == null) return;

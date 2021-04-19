@@ -40,6 +40,7 @@ namespace Inventory
         
         public override void Use(InputMaster _playerInput, GameObject _caller)
         {
+            if (!_caller.GetComponent<PlayerController>().canShoot) return;
             if (currAmmo == 0) return; // Play sound?
             if (Time.time >= nextShootTime)
             {
@@ -60,6 +61,7 @@ namespace Inventory
         
         public override void ControllerUse(InputMaster _playerInput, GameObject _caller)
         {
+            if (!_caller.GetComponent<PlayerController>().canShoot) return;
             if (currAmmo == 0) return;
             if (Time.time >= nextShootTime) 
             {   

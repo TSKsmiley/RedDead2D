@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (!other.CompareTag("EnterBuilding"))
+        if (!other.CompareTag("Teleport"))
         {
             if (!other.CompareTag("NPC"))
             {
