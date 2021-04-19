@@ -28,16 +28,9 @@
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputMaster.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Trees/New Trees/Materials.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +41,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EAE584CE-26BC-4022-9C1B-1AA476BFA589/2d/6b81d542/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EAE584CE-26BC-4022-9C1B-1AA476BFA589/94/db472990/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -55,19 +50,19 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ConsumableItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RangedWeaponItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/QuestItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/RangedWeaponItem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventTriggers.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Base/Item.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ohCLXhCzizakA5qZ3IeC5UtdR3" />
@@ -80,8 +75,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34991708" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -138,6 +133,8 @@
       <workItem from="1618152755002" duration="858000" />
       <workItem from="1618159940341" duration="85000" />
       <workItem from="1618160040059" duration="7487000" />
+      <workItem from="1618815110610" duration="6957000" />
+      <workItem from="1618839673410" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="bruh">
       <created>1615289750821</created>
@@ -191,5 +188,37 @@
     <MESSAGE value="bruh" />
     <MESSAGE value="m,erge" />
     <option name="LAST_COMMIT_MESSAGE" value="m,erge" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs</url>
+          <line>101</line>
+          <properties documentPath="C:\Users\arnar\Documents\Unity\RedDead2D\Assets\Scripts\Inventory\Controller.cs" initialLine="101" containingFunctionPresentation="method 'AddItem'">
+            <startOffsets>
+              <option value="2534" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2556" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs</url>
+          <line>305</line>
+          <properties documentPath="C:\Users\arnar\Documents\Unity\RedDead2D\Assets\Scripts\Inventory\Controller.cs" initialLine="303" containingFunctionPresentation="method 'RefreshUI'">
+            <startOffsets>
+              <option value="9044" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9045" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
