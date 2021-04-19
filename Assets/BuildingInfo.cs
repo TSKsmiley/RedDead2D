@@ -10,15 +10,25 @@ public class BuildingInfo : MonoBehaviour
 
     public GameObject FadeToBlack_Box;
 
+    public float nextTeleportTime = 0F;
+    public float teleportCooldown = 1F;
+
+
     private void Awake()
 	{
         FadeToBlack_Box.SetActive(true);
     }
 	public void Teleport(Transform playerPos, PlayerController playerScript)
 	{
-        transition.SetTrigger("Start");
-        playerScript.canShoot = !playerScript.canShoot;
-        StartCoroutine(WaitForFade(playerPos));
+        if (Time.time >= nextTeleportTime)
+        {
+            transition.SetTrigger("Start");
+            playerScript.canShoot = !playerScript.canShoot;
+            StartCoroutine(WaitForFade(playerPos));
+
+            nextTeleportTime = Time.time + 1f / teleportCooldown;
+        }
+        
     }
 
     IEnumerator WaitForFade(Transform playerPos)
