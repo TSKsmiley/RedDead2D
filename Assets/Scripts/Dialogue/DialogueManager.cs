@@ -166,7 +166,12 @@ public class DialogueManager : MonoBehaviour {
 
     // Animate the dialoguebox causing it to exit the screen
     void EndDialogue() {
-        if (isQuestDialogue == true) QuestManager.instance.CompleteActive();
+        if (isQuestDialogue == true)
+        {
+            isQuestDialogue = false;
+            QuestManager.instance.CompleteActive();
+        }
+        
         playerRB.constraints = RigidbodyConstraints2D.None;
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetBool("IsOpen", false);

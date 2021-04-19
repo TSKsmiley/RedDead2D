@@ -26,11 +26,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="280bddb4-9b93-4101-a6a1-4b2faf9fbf5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Money.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Money/Money.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Money/Money.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Money.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Money/Money.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Money/Money.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Money/MoneyManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/Quest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/Quest.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDead2D/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Assets/Sprites/Trees/New Trees/Materials.meta" beforeDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Choices_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Choices_Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game World.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Carbine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Carbine.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Items/Weapons/Revolver.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Quests/001Hunting/2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/Story.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/Story.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/DialogueQuest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/DialogueQuest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/KillQuest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quest/Types/KillQuest.cs" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +67,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< Updated upstream
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EAE584CE-26BC-4022-9C1B-1AA476BFA589/2d/6b81d542/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EAE584CE-26BC-4022-9C1B-1AA476BFA589/94/db472990/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/Item Types/Derived/AmmoItem.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Money/MoneyManager.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> Stashed changes
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quest/Types/Quest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
+<<<<<<< Updated upstream
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Interfaces.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemStack.cs" />
@@ -64,6 +96,23 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/ItemObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Controller.cs" />
     </changedPaths>
+=======
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Money/Money.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Money/MoneyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/Story.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/Types/KillQuest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/Types/Quest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/Types/DialogueQuest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Quest/QuestManager.cs" />
+      </list>
+    </option>
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectId" id="1ohCLXhCzizakA5qZ3IeC5UtdR3" />
   <component name="ProjectLevelVcsManager">
@@ -97,7 +146,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -106,7 +155,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -133,8 +182,13 @@
       <workItem from="1618152755002" duration="858000" />
       <workItem from="1618159940341" duration="85000" />
       <workItem from="1618160040059" duration="7487000" />
+<<<<<<< Updated upstream
       <workItem from="1618815110610" duration="6957000" />
       <workItem from="1618839673410" duration="612000" />
+=======
+      <workItem from="1618830661793" duration="4478000" />
+      <workItem from="1618843939484" duration="3880000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="bruh">
       <created>1615289750821</created>
@@ -189,6 +243,7 @@
     <MESSAGE value="m,erge" />
     <option name="LAST_COMMIT_MESSAGE" value="m,erge" />
   </component>
+<<<<<<< Updated upstream
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -220,5 +275,16 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+=======
+  <component name="WindowStateProjectService">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1618844198690">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618844198690" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618840887668">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1618840887668" />
+>>>>>>> Stashed changes
   </component>
 </project>

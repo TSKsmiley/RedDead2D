@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "StoryObject", menuName = "Quest/Story", order = 0)]
 public class Story : ScriptableObject
 {
-    public List<ScriptableObject> story = new List<ScriptableObject>();
+    public List<Quest> story = new List<Quest>();
 }

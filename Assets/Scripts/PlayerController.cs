@@ -83,16 +83,8 @@ public class PlayerController : MonoBehaviour
             DialogueManager.instance.DisplayNextSentence();
             return;
         }
-
-        if (QuestManager.instance.IsDialogueQuest() && currentTrigger != null)
-        {
-            DialogueQuest activeQ = (DialogueQuest) QuestManager.instance.GetActive();
-            if (currentTrigger.name == activeQ.NPC.name)
-            {
-                activeQ.NPC.GetComponent<DialogueTrigger>().TriggerDialogue(null);
-                return;
-            }
-        }
+        
+        if (QuestManager.instance.isStoryComplete == false) QuestManager.instance.GetActive().CheckCompleteConditions(currentTrigger, this.gameObject);
         
         if (currentTrigger == null) return;
         // ALL INTERACTABLE PLACES GO HERE
@@ -104,6 +96,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case "NPC":
+                if (DialogueManager.instance.isQuestDialogue) return;
                 DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
                 if (diagTrigger.dialogue[0] == null) return;
                 

@@ -15,10 +15,10 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI QuestObjective;
     public TextMeshProUGUI QuestDescription;
     
-    public List<ScriptableObject> AllQuests = new List<ScriptableObject>();
+    public List<Quest> AllQuests = new List<Quest>();
     private GameObject CurrQuestIcon;
 
-    private bool isStoryComplete = false;
+    public bool isStoryComplete = false;
     public static int ActiveQuest = 0;
     public static QuestManager instance;
 
@@ -42,6 +42,7 @@ public class QuestManager : MonoBehaviour
     public void CompleteActive()
     {
         if (IsDialogueQuest()) Destroy(CurrQuestIcon);
+        if (AllQuests[ActiveQuest].RewardMoney != 0) MoneyManager.instance.AddMoney(AllQuests[ActiveQuest].RewardMoney);
         ActiveQuest++;
         SetUI();
     }
@@ -52,7 +53,7 @@ public class QuestManager : MonoBehaviour
         SetUI();
     }
 
-    public ScriptableObject GetActive()
+    public Quest GetActive()
     {
         return AllQuests[ActiveQuest];
     }
@@ -60,6 +61,7 @@ public class QuestManager : MonoBehaviour
     public bool IsDialogueQuest()
     {
         if (isStoryComplete == true) return false;
+        
         if ((dynamic)AllQuests[ActiveQuest].GetType() == typeof(DialogueQuest))
         {
             return true;
@@ -75,7 +77,7 @@ public class QuestManager : MonoBehaviour
         try
         {
             var questToDisplay = (dynamic) AllQuests[ActiveQuest];
-        
+
             if (IsDialogueQuest())
             { 
                 GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.NPC.transform.position + new Vector3(0, 1.35f, 0), questToDisplay.NPC.transform.rotation);
