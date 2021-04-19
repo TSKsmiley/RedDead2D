@@ -67,7 +67,7 @@ namespace Inventory
             
             for (int i = 0; i < startingItems.Count; i++)
             {
-                Inventory[i] = new ItemStack(startingItems[i]);
+                AddItem(startingItems[i]);
             }
             
             RefreshUI();
@@ -97,6 +97,51 @@ namespace Inventory
             return false;
         }
 
+        public void AddItem(Item item)
+        { 
+            if (item.maxStack > 1)
+            {
+                var existingItems = FindItem(item);
+                if (existingItems.Count == 0)
+                {
+                    Inventory[FindFirstEmpty()] = new ItemStack(item);
+                }
+                else
+                {
+                    Inventory[existingItems[0]].Quantity++;
+                }
+            }
+            else
+            {
+                Inventory[FindFirstEmpty()] = new ItemStack(item);
+            }
+        }
+        
+        public void AddItem(Item item, int amount)
+        { 
+            if (item.maxStack > 1)
+            {
+                // STACKABLE ITEMS
+                var existingItems = FindItem(item);
+                if (existingItems.Count == 0)
+                {
+                    Inventory[FindFirstEmpty()] = new ItemStack(item);
+                }
+                else
+                {
+                    Inventory[existingItems[0]].Quantity += amount;
+                }
+            }
+            else
+            {
+                // NON STACKABLE ITEMS
+                for (int i = 0; i < amount; i++)
+                {
+                    Inventory[FindFirstEmpty()] = new ItemStack(item);
+                }
+            }
+        }
+
         /// <summary>
         /// Finds all instances of a given item in the inventory
         /// </summary>
@@ -107,11 +152,36 @@ namespace Inventory
             List<int> results = new List<int>();
             for (int i = 0; i < Inventory.Length; i++)
             { 
-                if (Inventory[i].Item.name == item.name) results.Add(i);
+                if (Inventory[i]?.Item.name == item.name) results.Add(i);
             }
 
             return results;
         }
+
+        /// <summary>
+        /// Finds the next empty spot in the inventory
+        /// </summary>
+        /// <returns>index array for empty spots</returns>
+        public List<int> FindEmpty()
+        {
+            List<int> results = new List<int>();
+            for (int i = 0; i < Inventory.Length; i++)
+            { 
+                if (Inventory[i] == null) results.Add(i);
+            }
+
+            return results;
+        }
+        
+        public int FindFirstEmpty()
+        {
+            for (int i = 0; i < Inventory.Length; i++)
+            { 
+                if (Inventory[i] == null) return i;
+            }
+            return -1;
+        }
+        
         
         /// <summary>
         /// Finds all instances of a given item name in the inventory
@@ -139,16 +209,30 @@ namespace Inventory
 
             // We search for some ammo and order it highest to lowest value
             List<int> results = FindItemByName(_itemName).OrderByDescending(v => v).ToList();
-            
+
             if (results.Count == 0) return 0; // If we didn't find any item, simply return 0
-            if (results.Count < _amount) _amount = results.Count; // If what we found is less than what we need, we set what we found to what we need (prevents errors)
+
             
-            // Loop through inventory to take items
-            for (int i = 0; i < _amount; i++)
+            if (Inventory[results[0]].Item.maxStack > 1)
             {
-                Inventory[results[i]] = null; // Find the item at the index and remove it (by setting it to null)
-                removeCount++; // We just removed something
+                ////// Stackable items
+                
             }
+            else
+            {
+                ////// non-stackable items
+                if (results.Count < _amount) _amount = results.Count; // If what we found is less than what we need, we set what we found to what we need (prevents errors)
+
+                // Loop through inventory to take items
+                for (int i = 0; i < _amount; i++)
+                {
+                    Inventory[results[i]] = null; // Find the item at the index and remove it (by setting it to null)
+                    removeCount++; // We just removed something
+                }
+            }
+            
+            
+           
 
             RefreshUI(); // Refresh the UI in order to update the inventory items visually
             return removeCount; // Return the amount we removed
@@ -252,7 +336,7 @@ namespace Inventory
                 if (Inventory[i] != null)
                 {
                     uiObjects[i].Item = Inventory[i].Item;
-                    uiObjects[i].UpdateUI();
+                    uiObjects[i].UpdateUI(Inventory[i].Quantity);
                 }
                 else
                 {
@@ -270,7 +354,7 @@ namespace Inventory
                 else
                 {
                     hotbarObjects[i].GetComponent<ItemObject>().Item = Inventory[i].Item;
-                    hotbarObjects[i].GetComponent<ItemObject>().UpdateUI();
+                    hotbarObjects[i].GetComponent<ItemObject>().UpdateUI(Inventory[i].Quantity);
                 }
                 
             }

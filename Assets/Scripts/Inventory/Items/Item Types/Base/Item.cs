@@ -19,7 +19,7 @@ namespace Inventory
         public Sprite sprite {get;set;}
 
         [field: SerializeField]
-        public bool stackable {get;set;}
+        public int maxStack { get; set; } = 1;
 
         public void Equip() {
 

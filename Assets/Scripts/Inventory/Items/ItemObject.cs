@@ -8,7 +8,7 @@ namespace Inventory
     {
         public Item Item;
 
-        public new TextMeshProUGUI name;
+        public TextMeshProUGUI Quantity;
         public Image spriteRenderer;
         // Start is called before the first frame update
         void Start()
@@ -16,8 +16,10 @@ namespace Inventory
         
         }
 
-        public void UpdateUI()
+        public void UpdateUI(int amount)
         {
+            Quantity.text = amount > 1 ? amount.ToString() : "";
+            
             if (Item.sprite == null) spriteRenderer.enabled = false;
             spriteRenderer.sprite = Item.sprite;
             if (Item.sprite != null) spriteRenderer.enabled = true;

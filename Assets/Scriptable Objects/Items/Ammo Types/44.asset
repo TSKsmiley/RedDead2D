@@ -17,4 +17,4 @@ MonoBehaviour:
   <goldValue>k__BackingField: 150
   <sprite>k__BackingField: {fileID: -6142374563283994760, guid: 06caf4f95a1ebe04cb19a482498193a9,
     type: 3}
-  <stackable>k__BackingField: 1
+  <maxStack>k__BackingField: 64
