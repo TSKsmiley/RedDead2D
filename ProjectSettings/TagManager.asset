@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Building
   - Teleport
+  - EnterBuilding
+  - Saloon
   layers:
   - Default
   - TransparentFX

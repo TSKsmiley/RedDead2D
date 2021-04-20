@@ -14,17 +14,19 @@ public class PlayerController : MonoBehaviour
 
     public bool canShoot = true;
 
+    public int health = 100;
     public float speed = 10f;
     
     // QOL Features
     public GameObject aimAssist;
-    public GameObject ammo;
 
     private InputMaster playerInput;
 
     private Rigidbody2D rb;
     
     private Collider2D currentTrigger = null;
+
+    public Animator animator;
 
     void Awake()
     {
@@ -112,7 +114,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+	void FixedUpdate()
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
@@ -128,6 +130,19 @@ public class PlayerController : MonoBehaviour
         else {
             aimAssist.SetActive(false); // Don't show aimassist
         }
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
+        animator.SetFloat("Speed", moveInput.sqrMagnitude);
+
+    }
+
+    public void TakeDamage(int _damage)
+    {
+        if (health <= 0)
+        {
+            Debug.Log("deed");
+        }
+        health -= _damage;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
