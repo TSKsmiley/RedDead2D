@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour
 
     public bool canShoot = true;
 
+    public int health = 100;
     public float speed = 10f;
     
     // QOL Features
     public GameObject aimAssist;
-    public GameObject ammo;
 
     private InputMaster playerInput;
 
@@ -128,6 +128,15 @@ public class PlayerController : MonoBehaviour
         else {
             aimAssist.SetActive(false); // Don't show aimassist
         }
+    }
+
+    public void TakeDamage(int _damage)
+    {
+        if (health <= 0)
+        {
+            Debug.Log("deed");
+        }
+        health -= _damage;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

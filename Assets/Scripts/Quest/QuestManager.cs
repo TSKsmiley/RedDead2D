@@ -84,8 +84,7 @@ public class QuestManager : MonoBehaviour
                 g.transform.parent = GameObject.Find(questToDisplay.NPC.name).transform;
                 CurrQuestIcon = g;
             }
-        
-
+            
             QuestName.text = questToDisplay.Name;
             QuestObjective.text = $"Objective: {questToDisplay.Objective}";
             QuestDescription.text = questToDisplay.Description;

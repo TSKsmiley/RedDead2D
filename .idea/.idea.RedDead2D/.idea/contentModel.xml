@@ -29,7 +29,10 @@
             <e p="DialogueTrigger.cs" t="Include" />
             <e p="UIDialogueOption.cs" t="Include" />
           </e>
-          <e p="Enemy.cs" t="Include" />
+          <e p="Enemy Behaviour" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyTrigger.cs" t="Include" />
+          </e>
           <e p="InputMaster.cs" t="Include" />
           <e p="Inventory" t="Include">
             <e p="Controller.cs" t="Include" />
