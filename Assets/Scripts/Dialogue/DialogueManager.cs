@@ -65,6 +65,7 @@ public class DialogueManager : MonoBehaviour {
     public void StartDialogue (Dialogue dialogue)
     {
         playerRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        playerRB.GetComponent<PlayerController>().canShoot = false;
         isDialogueStarted = true;
         animator.SetBool("IsOpen", true); // Animate the dialogue 
 
@@ -171,7 +172,8 @@ public class DialogueManager : MonoBehaviour {
             isQuestDialogue = false;
             QuestManager.instance.CompleteActive();
         }
-        
+
+        playerRB.GetComponent<PlayerController>().canShoot = true;
         playerRB.constraints = RigidbodyConstraints2D.None;
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetBool("IsOpen", false);

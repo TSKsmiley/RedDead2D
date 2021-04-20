@@ -21,7 +21,8 @@ public class EnemyTrigger : MonoBehaviour
                 KillQuest currQuest = (KillQuest)QuestManager.instance.GetActive();
                 if (currQuest.target.name == enemyToSpawn.name)
                 {
-                    Instantiate(enemyToSpawn, spawnPoint);
+                    GameObject g = Instantiate(enemyToSpawn, spawnPoint);
+                    g.name = enemyToSpawn.name;
                     active = true;
                 }
             
