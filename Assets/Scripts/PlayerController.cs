@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     
     private Collider2D currentTrigger = null;
 
+    public Animator animator;
+
     void Awake()
     {
         playerInput = new InputMaster();
@@ -112,7 +114,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+	void FixedUpdate()
     {
         Vector2 moveInput = playerInput.Player.Movement.ReadValue<Vector2>();
         rb.velocity = moveInput * speed;
@@ -128,6 +130,10 @@ public class PlayerController : MonoBehaviour
         else {
             aimAssist.SetActive(false); // Don't show aimassist
         }
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
+        animator.SetFloat("Speed", moveInput.sqrMagnitude);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
