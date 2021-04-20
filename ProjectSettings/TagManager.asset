@@ -10,6 +10,7 @@ TagManager:
   - Teleport
   - EnterBuilding
   - Saloon
+  - Trigger
   layers:
   - Default
   - TransparentFX
