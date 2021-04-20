@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 3}
   <maxStack>k__BackingField: 1
   <chamberSize>k__BackingField: 12
-  <currAmmo>k__BackingField: 12
+  <currAmmo>k__BackingField: 2147483572
   <ammoType>k__BackingField: 40
   <travelDistance>k__BackingField: 0
   <shootRate>k__BackingField: 4

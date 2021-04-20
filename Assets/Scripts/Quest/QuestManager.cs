@@ -80,7 +80,7 @@ public class QuestManager : MonoBehaviour
 
             if (IsDialogueQuest())
             { 
-                GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.NPC.transform.position + new Vector3(0, 1.35f, 0), questToDisplay.NPC.transform.rotation);
+                GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.NPC.transform.position, questToDisplay.NPC.transform.rotation);
                 g.transform.parent = GameObject.Find(questToDisplay.NPC.name).transform;
                 CurrQuestIcon = g;
             }
