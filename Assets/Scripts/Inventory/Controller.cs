@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -46,6 +47,10 @@ namespace Inventory
         
         
         public static Controller instance;
+
+        public delegate void newItemSelect();
+
+        public event newItemSelect itemSelectEvent;
 
         private void Awake()
         {
@@ -343,6 +348,7 @@ namespace Inventory
             selectedRect.position = hotbarObjects[i].GetComponent<RectTransform>().position;
             
             CheckItemType();
+            if (itemSelectEvent != null) itemSelectEvent();
         }
 
         public void SelectNext()
@@ -351,6 +357,7 @@ namespace Inventory
             selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
             
             CheckItemType();
+            if (itemSelectEvent != null) itemSelectEvent();
         }
 
         public void SelectPrevious()
@@ -359,6 +366,7 @@ namespace Inventory
             selectedRect.position = hotbarObjects[selectedIndex].GetComponent<RectTransform>().position;
             
             CheckItemType();
+            if (itemSelectEvent != null) itemSelectEvent();
         }
         
         public ItemStack GetSelectedItem()
@@ -387,7 +395,7 @@ namespace Inventory
                 }
             }
         }
-        
+
         public void EnableWeaponUI(RangedWeaponItem _weapon)
         {
             UpdateAmmo(_weapon.currAmmo.ToString(), _weapon.chamberSize.ToString());

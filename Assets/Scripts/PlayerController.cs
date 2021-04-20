@@ -39,20 +39,47 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Reload.performed += Reload;
         playerInput.Player.ControllerUse.performed += ControllerUse;
         playerInput.Player.HotbarSel.performed += HotbarSel;
-        playerInput.Player.NextHotbar.performed += context => { Inventory.Controller.instance.SelectNext();};
-        playerInput.Player.PrevHotbar.performed += context => { Inventory.Controller.instance.SelectPrevious();};
+        playerInput.Player.NextHotbar.performed+= context => { Inventory.Controller.instance.SelectNext(); };
+        playerInput.Player.PrevHotbar.performed += context => { Inventory.Controller.instance.SelectPrevious(); };
         playerInput.Player.ToggleInv.performed += context => { Inventory.Controller.instance.ToggleInv(); };
+        
+        
+    }
+
+    private void Start()
+    {
+        AudioManager.instance.Play("Music");
+        
+        // CUSTOM EVENTS
+        Controller.instance.itemSelectEvent += OnItemSelect;
+    }
+
+    // When a new item is selected
+    private void OnItemSelect()
+    {
+        ItemStack item = Controller.instance.GetSelectedItem();
+        if (item == null)
+        {
+            animator.SetBool("RevolverInHand", false);
+            return;
+        }
+        // Animation shit
+        switch (item.Item.name)
+        {
+            case "Revolver":
+                animator.SetBool("RevolverInHand", true);
+                break;
+                    
+            default:
+                animator.SetBool("RevolverInHand", false);
+                break;
+        }
     }
 
     private void HotbarSel(InputAction.CallbackContext obj)
     {
         Inventory.Controller.instance.Select(Int32.Parse(obj.control.name)-1);
     }
-
-	private void Start()
-	{
-        AudioManager.instance.Play("Music");
-	}
 
     private void ControllerUse(InputAction.CallbackContext obj)
     {

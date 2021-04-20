@@ -26,20 +26,23 @@ public class Bullet : MonoBehaviour
     {
         if (!other.CompareTag("Teleport"))
         {
-            if (!other.CompareTag("NPC"))
+            if (!other.CompareTag("Trigger"))
             {
-				if (!other.CompareTag("Player"))
-				{
-                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                    this.GetComponent<SpriteRenderer>().enabled = false; 
-                    StartCoroutine(waitDestroy());
-
-                    if (other.CompareTag("Enemy")) 
+                if (!other.CompareTag("NPC"))
+                {
+                    if (!other.CompareTag("Player"))
                     {
-                        other.GetComponent<Enemy>().TakeDamage(20);
+                        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                        this.GetComponent<SpriteRenderer>().enabled = false; 
+                        StartCoroutine(waitDestroy());
+
+                        if (other.CompareTag("Enemy")) 
+                        {
+                            other.GetComponent<Enemy>().TakeDamage(20);
+                        }
                     }
-				}
                 
+                }
             }
         }
         
