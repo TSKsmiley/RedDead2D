@@ -101,7 +101,8 @@ namespace Inventory
         { 
             if (item.maxStack > 1)
             {
-                var existingItems = FindItem(item);
+                //// Stackable items
+                var existingItems = FindNotFullStack(item);
                 if (existingItems.Count == 0)
                 {
                     Inventory[FindFirstEmpty()] = new ItemStack(item);
@@ -113,10 +114,16 @@ namespace Inventory
             }
             else
             {
+                //// NON Stackable items
                 Inventory[FindFirstEmpty()] = new ItemStack(item);
             }
         }
         
+        /// <summary>
+        /// DO NOT USE AS IT IS NOT COMPLETE
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="amount"></param>
         public void AddItem(Item item, int amount)
         { 
             if (item.maxStack > 1)
@@ -129,6 +136,7 @@ namespace Inventory
                 }
                 else
                 {
+                    // this line of code will put more items than max allowed
                     Inventory[existingItems[0]].Quantity += amount;
                 }
             }
@@ -147,6 +155,23 @@ namespace Inventory
         /// </summary>
         /// <param name="item"></param>
         /// <returns>a list of indexes where the item exists</returns>
+        public List<int> FindNotFullStack(Item _item)
+        {
+            var returns = new List<int>();
+            var items = FindItem(_item);
+            foreach (var item in items)
+            {
+                if (Inventory[item].Quantity != Inventory[item].Item.maxStack) returns.Add(item);
+            }
+
+            return returns;
+        }
+        
+        /// <summary>
+        /// Finds all instances of a given item in the inventory
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>a list of indexes where the item exists</returns>
         public List<int> FindItem(Item item)
         {
             List<int> results = new List<int>();
@@ -156,6 +181,16 @@ namespace Inventory
             }
 
             return results;
+        }
+        
+        public int FindFirstItem(Item item)
+        {
+            for (int i = 0; i < Inventory.Length; i++)
+            { 
+                if (Inventory[i]?.Item.name == item.name) return i;
+            }
+            
+            return -1;
         }
 
         /// <summary>
@@ -199,6 +234,16 @@ namespace Inventory
             return results;
         }
         
+        public int FindFirstItemByName(string itemName)
+        {
+            for (int i = 0; i < Inventory.Length; i++)
+            {
+                if (Inventory[i]?.Item.name == itemName) return i;
+            }
+
+            return -1;
+        }
+        
         /// <summary>
         /// Removes a given amount of items from the inventory
         /// </summary>
@@ -216,9 +261,40 @@ namespace Inventory
             if (Inventory[results[0]].Item.maxStack > 1)
             {
                 ////// Stackable items
-                
-                // TODO: make this code for removing items from stacks 
-                
+                bool removeMoreItems = true;
+                while (removeMoreItems)
+                {
+                    var item = FindFirstItemByName(_itemName);
+
+                    if (item != -1)
+                    {
+
+                        if (Inventory[item].Quantity > _amount)
+                        {
+                            removeMoreItems = false;
+                            Inventory[item].Quantity -= _amount;
+                            removeCount += _amount;
+                        }
+                        else if (Inventory[item].Quantity == _amount)
+                        {
+                            removeMoreItems = false;
+                            Inventory[item] = null;
+                            removeCount += _amount;
+                        }
+                        else
+                        {
+                            _amount -= Inventory[item].Quantity;
+                            removeCount += Inventory[item].Quantity;
+                            Inventory[item] = null;
+                        }
+                    }
+                    else
+                    {
+                        removeMoreItems = false;
+                    }
+                }
+
+
             }
             else
             {
@@ -343,6 +419,7 @@ namespace Inventory
                 else
                 {
                     uiObjects[i].spriteRenderer.enabled = false;
+                    uiObjects[i].Quantity.text = "";
                 }
             }
             
@@ -352,6 +429,8 @@ namespace Inventory
                 if (Inventory[i] == null)
                 {
                     hotbarObjects[i].GetComponent<ItemObject>().spriteRenderer.enabled = false;
+                    hotbarObjects[i].GetComponent<ItemObject>().Quantity.text = "";
+                    
                 }
                 else
                 {
