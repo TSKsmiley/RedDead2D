@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour {
     public bool isQuestDialogue = false;
     public bool isInChoice = false;
     
+    // PRIVATES
     private Queue<string> sentences; // A queue containing a string of sentences to be dequeued
     private Queue<string> speakers;
     private Queue<DialogueChoice[]> choices;
@@ -34,11 +35,11 @@ public class DialogueManager : MonoBehaviour {
     
     private string currSentence;
     private DialogueChoice[] currChoiceArr;
-    private bool isTyping = false;
+    public bool isTyping = false;
     
     // Singleton to access non-static methods and variables in other classes
     public static DialogueManager instance;
-    
+
     private void Awake()
     {
         if (instance == null)
@@ -87,14 +88,14 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
     {
-        if (isInChoice == true) return;
-
         if (isTyping) 
         {
             StopAllCoroutines();
             dialogueText.text = currSentence;
-            CheckForChoices(currChoiceArr);
+            
             isTyping = false;
+            CheckForChoices(currChoiceArr);
+           
             return;
         }
         
@@ -132,8 +133,9 @@ public class DialogueManager : MonoBehaviour {
             //yield return null; // Wait one frame
             yield return new WaitForSeconds(typeDelay);
         }
-        isTyping = false;
 
+        isTyping = false;
+        
         CheckForChoices(choiceArr);
     }
 
@@ -152,9 +154,15 @@ public class DialogueManager : MonoBehaviour {
                 spawnedButtons.Add(newButton); // Then add it to the list (this way we can delete them later to avoid filling up our list excessively and also to avoid duplicate buttons)
                 newButton.GetComponent<UIDialogueOption>().Setup(choice.followOnDialogue, choice.addStory); // We call the setup where we pass the followOnDialogue choice
                 newButton.transform.GetChild(1).GetComponent<TMP_Text>().text = choice.dialogueChoice; // Also we set the text on the buttons
-                EventSystem.current.SetSelectedGameObject(spawnedButtons[0]);
+                StartCoroutine("SetObject");
             }
         }
+    }
+
+    IEnumerator SetObject()
+    {
+        yield return new WaitForSeconds(5f);
+        EventSystem.current.SetSelectedGameObject(spawnedButtons[0]);
     }
 
     public void HideOptions()
@@ -178,5 +186,4 @@ public class DialogueManager : MonoBehaviour {
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         animator.SetBool("IsOpen", false);
     }
-
 }

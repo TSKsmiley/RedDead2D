@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
 
     public bool canShoot = true;
 
-    public int health = 100;
+    public HealthBar healthBar;
+    public int currHealth;
+    public int maxHealth = 100;
     public float speed = 10f;
     
     // QOL Features
@@ -52,6 +54,10 @@ public class PlayerController : MonoBehaviour
         
         // CUSTOM EVENTS
         Controller.instance.itemSelectEvent += OnItemSelect;
+        
+        // HEALTH
+        currHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // When a new item is selected
@@ -165,11 +171,13 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int _damage)
     {
-        if (health <= 0)
+        if (currHealth <= 0)
         {
             Debug.Log("deed");
         }
-        health -= _damage;
+        
+        currHealth -= _damage;
+        healthBar.SetHealth(currHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

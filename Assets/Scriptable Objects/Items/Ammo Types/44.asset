@@ -15,6 +15,6 @@ MonoBehaviour:
   <name>k__BackingField: .44
   <description>k__BackingField: An ammotype for a revolver
   <goldValue>k__BackingField: 150
-  <sprite>k__BackingField: {fileID: -6142374563283994760, guid: 06caf4f95a1ebe04cb19a482498193a9,
+  <sprite>k__BackingField: {fileID: 21300000, guid: c0d4f68cd50606740b9070213a66a126,
     type: 3}
   <maxStack>k__BackingField: 64
