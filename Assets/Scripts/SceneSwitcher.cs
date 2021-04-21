@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class SceneSwitcher : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class SceneSwitcher : MonoBehaviour
 
 	public GameObject fadeToBlack;
 
-	
 	public void StartGameClick()
 	{
 		fadeToBlack.SetActive(true);
