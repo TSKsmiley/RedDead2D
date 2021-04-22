@@ -26,6 +26,8 @@ public class BuildingInfo : MonoBehaviour
             playerScript.canShoot = !playerScript.canShoot;
             StartCoroutine(EnterTimer(playerPos));
 
+            AudioManager.instance.Play("door");
+            
             nextTeleportTime = Time.time + 1f / teleportCooldown;
         }
     }

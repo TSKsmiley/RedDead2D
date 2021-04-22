@@ -21,3 +21,4 @@ MonoBehaviour:
     type: 3}
   dialogue:
   - {fileID: 11400000, guid: 973c5ca026423e7498eb231a0f038e04, type: 2}
+  sfxClip: greeting1a
