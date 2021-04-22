@@ -144,6 +144,10 @@ public class PlayerController : MonoBehaviour
 
                 diagTrigger.TriggerDialogue(diag);
                 break;
+            
+            case "ShopVendor":
+                currentTrigger.gameObject.GetComponent<ShopVendor>().OpenShop(rb);
+                break;
         }
     }
 

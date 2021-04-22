@@ -18,4 +18,4 @@ MonoBehaviour:
   <sprite>k__BackingField: {fileID: 21300000, guid: af8fdea476c754d4a86c294e66ab274d,
     type: 3}
   <maxStack>k__BackingField: 10
-  <healthRegen>k__BackingField: 25
+  healthRegen: 25
