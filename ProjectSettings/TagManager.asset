@@ -11,6 +11,7 @@ TagManager:
   - EnterBuilding
   - Saloon
   - Trigger
+  - ExitBuilding
   - ShopVendor
   layers:
   - Default
