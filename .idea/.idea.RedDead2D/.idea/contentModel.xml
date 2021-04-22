@@ -23,7 +23,6 @@
             <e p="Sound.cs" t="Include" />
           </e>
           <e p="BuildingInfo.cs" t="Include" />
-          <e p="buttonScaler.cs" t="Include" />
           <e p="Dialogue" t="Include">
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueManager.cs" t="Include" />
@@ -69,11 +68,6 @@
             </e>
           </e>
           <e p="SceneSwitcher.cs" t="Include" />
-          <e p="Shop" t="Include">
-            <e p="ShopVendor.cs" t="Include" />
-            <e p="UIBuyItem.cs" t="Include" />
-            <e p="UISelectItem.cs" t="Include" />
-          </e>
           <e p="WeaponBehaviour" t="Include">
             <e p="Bullet.cs" t="Include" />
           </e>

@@ -12,7 +12,6 @@ TagManager:
   - Saloon
   - Trigger
   - ExitBuilding
-  - ShopVendor
   layers:
   - Default
   - TransparentFX
