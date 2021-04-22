@@ -74,12 +74,6 @@ public class DialogueManager : MonoBehaviour {
 
         sentences.Clear();
 
-        // play sound clip for the greeting
-
-        DialogueQuest DQ = (DialogueQuest) QuestManager.instance.GetActive();
-
-        AudioManager.instance.Play(DQ.sfxClip);
-        
         // We go through every dialogueSegment
         foreach (DialogueSegment segment in dialogue.dialogueSegments)
         {

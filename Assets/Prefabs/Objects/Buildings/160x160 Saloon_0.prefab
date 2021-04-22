@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3410774902428717433}
   m_Layer: 0
   m_Name: EnterBuilding
-  m_TagString: Teleport
+  m_TagString: EnterBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,11 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ad068de15ab2441898476f9d500cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePoint: {fileID: 0}
-  transition: {fileID: 0}
-  FadeToBlack_Box: {fileID: 0}
-  nextTeleportTime: 1
-  teleportCooldown: 0.2
 --- !u!1 &8960931741605356862
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960931741605356862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.96, y: -0.7119163, z: 0}
+  m_LocalPosition: {x: -1.96, y: -0.7119163, z: 3.850586}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 8960931741614394462}

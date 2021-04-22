@@ -105,14 +105,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Map"",
-                    ""type"": ""Button"",
-                    ""id"": ""13ac6c50-4c3a-4f12-b9a9-2f0e734d72e2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -412,28 +404,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d4afc850-af7a-480b-a073-6cbefd65a9a1"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Map"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3a0f91fc-33d7-4ffa-b5c3-6f09eca8a441"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Map"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -453,7 +423,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_NextHotbar = m_Player.FindAction("NextHotbar", throwIfNotFound: true);
         m_Player_ToggleInv = m_Player.FindAction("ToggleInv", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
-        m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -514,7 +483,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_NextHotbar;
     private readonly InputAction m_Player_ToggleInv;
     private readonly InputAction m_Player_Reload;
-    private readonly InputAction m_Player_Map;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -530,7 +498,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @NextHotbar => m_Wrapper.m_Player_NextHotbar;
         public InputAction @ToggleInv => m_Wrapper.m_Player_ToggleInv;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
-        public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -573,9 +540,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
-                @Map.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
-                @Map.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
-                @Map.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -613,9 +577,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
-                @Map.started += instance.OnMap;
-                @Map.performed += instance.OnMap;
-                @Map.canceled += instance.OnMap;
             }
         }
     }
@@ -633,6 +594,5 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnNextHotbar(InputAction.CallbackContext context);
         void OnToggleInv(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnMap(InputAction.CallbackContext context);
     }
 }

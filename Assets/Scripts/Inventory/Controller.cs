@@ -321,10 +321,8 @@ namespace Inventory
             return removeCount; // Return the amount we removed
         }
         
-        public void ToggleInv(bool isMapOpen)
+        public void ToggleInv()
         {
-            if (isMapOpen == true) return;
-
             isOpen = !isOpen;
             invGui.SetActive(isOpen);
             hotbarGui.SetActive(!isOpen);

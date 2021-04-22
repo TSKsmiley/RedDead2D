@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingInfo : MonoBehaviour
-{
-    public Transform movePoint;
+{    
+    public Transform refLocation;
 
     public Animator transition;
 
@@ -24,36 +24,17 @@ public class BuildingInfo : MonoBehaviour
         {
             transition.SetTrigger("Start");
             playerScript.canShoot = !playerScript.canShoot;
-            StartCoroutine(EnterTimer(playerPos));
+            StartCoroutine(WaitForFade(playerPos));
 
-            AudioManager.instance.Play("door");
-            
             nextTeleportTime = Time.time + 1f / teleportCooldown;
         }
+        
     }
 
- //   public void ExitBuilding(Transform playerPos, PlayerController playerScript)
-	//{
- //       if (Time.time >= nextTeleportTime)
- //       {
- //           transition.SetTrigger("Start");
- //           playerScript.canShoot = !playerScript.canShoot;
- //           StartCoroutine(ExitTimer(playerPos));
-
- //           nextTeleportTime = Time.time + 1f / teleportCooldown;
- //       }
- //   }
-
-    IEnumerator EnterTimer(Transform playerPos)
-	{
+    IEnumerator WaitForFade(Transform playerPos)
+    {
         yield return new WaitForSeconds(1F);
-        playerPos.position = movePoint.transform.position;
+        playerPos.position = refLocation.transform.position;
         transition.SetTrigger("End");
     }
-    //IEnumerator ExitTimer(Transform playerPos)
-    //{
-    //    yield return new WaitForSeconds(1F);
-    //    playerPos.position = new Vector3(refLocation.x, refLocation.y, refLocation.z);
-    //    transition.SetTrigger("End");
-    //}
 }

@@ -15,8 +15,6 @@ namespace QuestSystem
         public GameObject QuestIcon;
         public Dialogue[] dialogue;
 
-        public string sfxClip;
-
         //TODO: RewardItem (item class not yet impemented)
 
         public override void CheckCompleteConditions(Collider2D _trigger, GameObject _caller)
