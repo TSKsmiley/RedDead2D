@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     
     // QOL Features
     public GameObject aimAssist;
+    public List<GameObject> hideObjectsOnMap;
+
+    public Camera mapCamera;
 
     private InputMaster playerInput;
 
@@ -29,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private Collider2D currentTrigger = null;
 
     public Animator animator;
+
+    public bool isMapOpen;
 
     void Awake()
     {
@@ -40,10 +45,11 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Use.performed += Use;
         playerInput.Player.Reload.performed += Reload;
         playerInput.Player.ControllerUse.performed += ControllerUse;
+        playerInput.Player.Map.performed += openMap;
         playerInput.Player.HotbarSel.performed += HotbarSel;
         playerInput.Player.NextHotbar.performed+= context => { Inventory.Controller.instance.SelectNext(); };
         playerInput.Player.PrevHotbar.performed += context => { Inventory.Controller.instance.SelectPrevious(); };
-        playerInput.Player.ToggleInv.performed += context => { Inventory.Controller.instance.ToggleInv(); };
+        playerInput.Player.ToggleInv.performed += context => { Inventory.Controller.instance.ToggleInv(isMapOpen); };
         
         
     }
@@ -130,6 +136,8 @@ public class PlayerController : MonoBehaviour
 
                 break;
 
+            
+
             case "NPC":
                 if (DialogueManager.instance.isQuestDialogue) return;
                 DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
@@ -167,6 +175,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", moveInput.y);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
+		
     }
 
     public void TakeDamage(int _damage)
@@ -180,7 +189,32 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(currHealth);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    void openMap(InputAction.CallbackContext obj)
+	{
+        if (Inventory.Controller.instance.isOpen == true) return;
+        isMapOpen = !isMapOpen;
+
+        mapCamera.enabled = !mapCamera.enabled;
+		foreach (GameObject g in hideObjectsOnMap)
+		{
+            g.SetActive(!g.activeSelf);
+		}
+
+
+		if (hideObjectsOnMap[0].activeSelf == true)
+		{
+			rb.constraints = RigidbodyConstraints2D.FreezePosition;
+		}
+		else
+		{
+			rb.constraints = RigidbodyConstraints2D.None;
+			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+		}
+	}
+
+
+	private void OnTriggerEnter2D(Collider2D other)
     {
         if(DebugMode)Debug.Log("Entering: "+other.tag);
         currentTrigger = other;
