@@ -73,17 +73,26 @@ public class PlayerController : MonoBehaviour
         if (item == null)
         {
             animator.SetBool("RevolverInHand", false);
+            animator.SetBool("CarbineInHand", false);
             return;
         }
+
         // Animation shit
         switch (item.Item.name)
         {
             case "Revolver":
                 animator.SetBool("RevolverInHand", true);
+                animator.SetBool("CarbineInHand", false);
+                break;
+                  
+            case "Carbine":
+                animator.SetBool("CarbineInHand", true);
+                animator.SetBool("RevolverInHand", false);
                 break;
                     
             default:
                 animator.SetBool("RevolverInHand", false);
+                animator.SetBool("CarbineInHand", false);
                 break;
         }
     }
@@ -197,6 +206,7 @@ public class PlayerController : MonoBehaviour
     void openMap(InputAction.CallbackContext obj)
 	{
         if (Inventory.Controller.instance.isOpen == true) return;
+        if (DialogueManager.instance.isDialogueStarted == true) return;
         isMapOpen = !isMapOpen;
 
         mapCamera.enabled = !mapCamera.enabled;

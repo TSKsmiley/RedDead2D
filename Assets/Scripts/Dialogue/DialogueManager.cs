@@ -65,6 +65,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue (Dialogue dialogue)
     {
+        if (playerRB.GetComponent<PlayerController>().isMapOpen == true) return;
+        
         playerRB.constraints = RigidbodyConstraints2D.FreezeAll;
         playerRB.GetComponent<PlayerController>().canShoot = false;
         isDialogueStarted = true;
@@ -74,12 +76,6 @@ public class DialogueManager : MonoBehaviour {
 
         sentences.Clear();
 
-        // play sound clip for the greeting
-
-        DialogueQuest DQ = (DialogueQuest) QuestManager.instance.GetActive();
-
-        AudioManager.instance.Play(DQ.sfxClip);
-        
         // We go through every dialogueSegment
         foreach (DialogueSegment segment in dialogue.dialogueSegments)
         {
@@ -94,6 +90,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextSentence ()
     {
+        if (isInChoice) return;
+        
         if (isTyping) 
         {
             StopAllCoroutines();

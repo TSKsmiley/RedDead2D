@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcdf8083c579e64e9cca7ef2d54a70d, type: 3}
   m_Name: Carbine
   m_EditorClassIdentifier: 
-  <name>k__BackingField: 1853 Carbine
+  <name>k__BackingField: Carbine
   <description>k__BackingField: haha carbine go skrrt brrrrr
   <goldValue>k__BackingField: 4000
   <sprite>k__BackingField: {fileID: 21300000, guid: 282f4a93577bbc64b99591d71f642682,

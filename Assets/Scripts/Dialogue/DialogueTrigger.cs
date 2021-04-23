@@ -15,11 +15,21 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueQuest activeQuest = (DialogueQuest)QuestManager.instance.GetActive();
             DialogueManager.instance.isQuestDialogue = true;
+            
+            // play sound clip for the greeting
+            DialogueQuest DQ = (DialogueQuest) QuestManager.instance.GetActive();
+
+            AudioManager.instance.Play(DQ.sfxClip);
             DialogueManager.instance.StartDialogue(activeQuest.dialogue[0]);
         }
         else
         {
             DialogueManager.instance.isQuestDialogue = false;
+            
+            // play sound clip for the greeting
+            DialogueQuest DQ = (DialogueQuest) QuestManager.instance.GetActive();
+            AudioManager.instance.Play(DQ.sfxClip);
+            
             DialogueManager.instance.StartDialogue(diag);
         }
     }
