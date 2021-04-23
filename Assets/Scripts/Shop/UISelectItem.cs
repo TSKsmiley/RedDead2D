@@ -16,6 +16,7 @@ public class UISelectItem : MonoBehaviour, ISelectHandler, IDeselectHandler
     private TextMeshProUGUI selectItemName;
     private TextMeshProUGUI selectItemDescription;
     private Button btnBuy;
+    private GameObject outline;
 
     // Internal item references
     private Sprite itemSprite;
@@ -24,7 +25,7 @@ public class UISelectItem : MonoBehaviour, ISelectHandler, IDeselectHandler
     private int itemGoldValue;
     private Item item;
     
-    public void Setup(Item _item, Image _itmSprite, TextMeshProUGUI _itmName, TextMeshProUGUI _itmDescription, Button _btnBuy)
+    public void Setup(Item _item, Image _itmSprite, TextMeshProUGUI _itmName, TextMeshProUGUI _itmDescription, Button _btnBuy, GameObject _outline)
     {
         item = _item;
         // ITEM SETUP
@@ -38,7 +39,7 @@ public class UISelectItem : MonoBehaviour, ISelectHandler, IDeselectHandler
         selectItemName = _itmName;
         selectItemDescription = _itmDescription;
         btnBuy = _btnBuy;
-        
+        outline = _outline;
     }
     
     public void RefreshSelected()
@@ -54,12 +55,14 @@ public class UISelectItem : MonoBehaviour, ISelectHandler, IDeselectHandler
     
     public void OnSelect(BaseEventData eventData)
     {
-        gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * 1.1f, gameObject.transform.localScale.y * 1.1f);
+        outline.SetActive(true);
+        //gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * 1.1f, gameObject.transform.localScale.y * 1.1f);
         RefreshSelected();
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
-        gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x / 1.1f, gameObject.transform.localScale.y / 1.1f);
+        outline.SetActive(false);
+        //gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x / 1.1f, gameObject.transform.localScale.y / 1.1f);
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 44
   m_EditorClassIdentifier: 
   <name>k__BackingField: .44
-  <description>k__BackingField: An ammotype for a revolver
-  <goldValue>k__BackingField: 150
-  <sprite>k__BackingField: {fileID: 21300000, guid: c0d4f68cd50606740b9070213a66a126,
+  <description>k__BackingField: An ammotype for a carbine
+  <goldValue>k__BackingField: 200
+  <sprite>k__BackingField: {fileID: 21300000, guid: 082fbc0c866c73246a7f33ca74b024ae,
     type: 3}
   <maxStack>k__BackingField: 64

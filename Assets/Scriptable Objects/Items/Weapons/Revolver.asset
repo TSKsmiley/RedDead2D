@@ -19,8 +19,8 @@ MonoBehaviour:
     type: 3}
   <maxStack>k__BackingField: 1
   <chamberSize>k__BackingField: 6
-  <currAmmo>k__BackingField: 399
-  <ammoType>k__BackingField: 44
+  <currAmmo>k__BackingField: 3
+  <ammoType>k__BackingField: 40
   <travelDistance>k__BackingField: 0
   <shootRate>k__BackingField: 4
   <bulletPrefab>k__BackingField: {fileID: 7463538146015067466, guid: 14d5eee96d854224bb68571e5a36f48b,

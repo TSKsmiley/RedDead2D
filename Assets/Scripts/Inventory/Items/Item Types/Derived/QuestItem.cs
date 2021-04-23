@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Inventory
 {
+    [CreateAssetMenu(fileName = "QuestItem", menuName = "Items/QuestItem")]
     public class QuestItem : Item
     {
         public override void Use(InputMaster _playerInput, GameObject _caller)

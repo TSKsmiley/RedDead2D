@@ -13,6 +13,7 @@ TagManager:
   - Trigger
   - ExitBuilding
   - ShopVendor
+  - Tent
   layers:
   - Default
   - TransparentFX

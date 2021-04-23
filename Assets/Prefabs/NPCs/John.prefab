@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3218615963001515892}
   - component: {fileID: 3218615963001515894}
   - component: {fileID: 3218615963001515891}
-  - component: {fileID: 3218615963001515890}
+  - component: {fileID: 4221310036403603228}
   m_Layer: 0
   m_Name: John
   m_TagString: NPC
@@ -138,7 +138,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.308908, y: 0.106891155}
   m_EdgeRadius: 0
---- !u!114 &3218615963001515890
+--- !u!114 &4221310036403603228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: 
-  dialogue:
-  - {fileID: 0}
+  dialogue: []
 --- !u!1 &3218615963046277580
 GameObject:
   m_ObjectHideFlags: 0

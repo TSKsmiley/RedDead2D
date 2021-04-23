@@ -67,6 +67,7 @@
               <e p="DialogueQuest.cs" t="Include" />
               <e p="KillQuest.cs" t="Include" />
               <e p="Quest.cs" t="Include" />
+              <e p="SleepQuest.cs" t="Include" />
             </e>
           </e>
           <e p="SceneSwitcher.cs" t="Include" />
@@ -79,6 +80,7 @@
             <e p="Bullet.cs" t="Include" />
           </e>
         </e>
+        <e p="tentSleep.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

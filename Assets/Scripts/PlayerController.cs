@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D currentTrigger = null;
 
     public Animator animator;
+    public Animator fadeBlackAnim;
 
     public bool isMapOpen;
 
@@ -142,15 +143,17 @@ public class PlayerController : MonoBehaviour
         {
             case "Teleport": //Enter and exit buildings with transition
                 currentTrigger.GetComponent<BuildingInfo>().Teleport(this.transform, this);
-
                 break;
 
-            
+            case "Tent":
+                currentTrigger.GetComponent<tentSleep>().Sleep();
+                if (QuestManager.instance.isStoryComplete == false) QuestManager.instance.GetActive().CheckCompleteConditions(currentTrigger, this.gameObject);
+                break;
 
             case "NPC":
                 if (DialogueManager.instance.isQuestDialogue) return;
                 DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
-                if (diagTrigger.dialogue[0] == null) return;
+                if (diagTrigger.dialogue.Length == 0) return;
                 
                 Dialogue diag = diagTrigger.dialogue[Random.Range(0, diagTrigger.dialogue.Length)];
 
