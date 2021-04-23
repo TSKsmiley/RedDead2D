@@ -69,7 +69,7 @@ namespace Inventory
                 Vector2 controllerDir = _playerInput.Player.ControllerAim.ReadValue<Vector2>();
                 if (controllerDir == new Vector2(0,0)) return;
 
-                GameObject g = Instantiate(bulletPrefab, firePointPos, Quaternion.identity);
+                GameObject g = Instantiate(bulletPrefab, firePointPos + new Vector2(0f, 0.4f), Quaternion.identity);
                 currAmmo--;
                 Inventory.Controller.instance.UpdateAmmo(currAmmo.ToString(), chamberSize.ToString());
                 g.GetComponent<Bullet>().MoveBullet(controllerDir.normalized);
@@ -88,8 +88,8 @@ namespace Inventory
         
         public enum AmmoType
         {
-            Revolver = 44,
-            Carbine = 40,
+            Revolver = 40,
+            Carbine = 44,
         }
     }
 }

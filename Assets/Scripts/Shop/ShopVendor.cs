@@ -46,8 +46,9 @@ public class ShopVendor : MonoBehaviour
             GameObject g = Instantiate(itemBox, itemBoxParent);
             g.SetActive(true);
             spawnedButtons.Add(g);
-            
-            g.GetComponent<UISelectItem>().Setup(item, selectItemSprite, selectItemName, selectItemDescription, btnBuy);
+
+            GameObject outline = g.transform.GetChild(0).GetChild(2).gameObject;
+            g.GetComponent<UISelectItem>().Setup(item, selectItemSprite, selectItemName, selectItemDescription, btnBuy, outline);
             
             g.transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = item.name;
             g.transform.GetChild(0).GetChild(1).gameObject.GetComponent<Image>().sprite = item.sprite;

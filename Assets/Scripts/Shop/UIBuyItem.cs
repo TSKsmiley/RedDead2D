@@ -4,8 +4,9 @@ using Inventory;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class UIBuyItem : MonoBehaviour
+public class UIBuyItem : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private Item item;
     
@@ -16,7 +17,21 @@ public class UIBuyItem : MonoBehaviour
     
     public void Buy()
     {
-        Inventory.Controller.instance.AddItem(item);
-        Inventory.Controller.instance.RefreshUI();
+        if (MoneyManager.instance.canAfford(item.goldValue) == true)
+        {
+            Inventory.Controller.instance.AddItem(item);
+            MoneyManager.instance.RemoveMoney(item.goldValue);
+            Inventory.Controller.instance.RefreshUI();
+        }
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(0,85,64,100);
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(0,0,0,100);
     }
 }
