@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.instance.Play("Music");
-        
         // CUSTOM EVENTS
         Controller.instance.itemSelectEvent += OnItemSelect;
         

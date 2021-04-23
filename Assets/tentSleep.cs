@@ -9,6 +9,7 @@ public class tentSleep : MonoBehaviour
 
     public void Sleep()
     {
+        AudioManager.instance.Play("sleep");
         sleepDark.SetTrigger("Start");
         StartCoroutine(SleepEnd());
     }
