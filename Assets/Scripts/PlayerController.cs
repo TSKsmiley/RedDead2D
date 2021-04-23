@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D currentTrigger = null;
 
     public Animator animator;
+    public Animator fadeBlackAnim;
 
     public bool isMapOpen;
 
@@ -145,7 +146,9 @@ public class PlayerController : MonoBehaviour
 
                 break;
 
-            
+            case "Tent":
+                currentTrigger.GetComponent<tentSleep>().Sleep();
+                break;
 
             case "NPC":
                 if (DialogueManager.instance.isQuestDialogue) return;
