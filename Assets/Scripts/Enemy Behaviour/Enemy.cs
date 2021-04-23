@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage) {
         if (health <= 0) {
+            AudioManager.instance.Play("bearDie");
             QuestManager.instance.GetActive().CheckCompleteConditions(null, this.gameObject);
             Destroy(this.gameObject);
         }
