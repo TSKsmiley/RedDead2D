@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
             case "NPC":
                 if (DialogueManager.instance.isQuestDialogue) return;
                 DialogueTrigger diagTrigger = currentTrigger.gameObject.GetComponent<DialogueTrigger>();
-                if (diagTrigger.dialogue[0] == null) return;
+                if (diagTrigger.dialogue.Length == 0) return;
                 
                 Dialogue diag = diagTrigger.dialogue[Random.Range(0, diagTrigger.dialogue.Length)];
 
