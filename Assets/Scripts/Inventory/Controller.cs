@@ -122,6 +122,7 @@ namespace Inventory
                 //// NON Stackable items
                 Inventory[FindFirstEmpty()] = new ItemStack(item);
             }
+            RefreshUI();
         }
         
         /// <summary>

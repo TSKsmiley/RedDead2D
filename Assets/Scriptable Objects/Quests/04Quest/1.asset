@@ -9,15 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fbe4534e5a4c65ba7e618b0c863782, type: 3}
+  m_Script: {fileID: 11500000, guid: ad6fcab5af39d974c94eabe4350b2f8a, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
   Name: A decent sale
   Description: 
-  Objective: 'Sell your bear skin '
-  RewardMoney: 0
+  Objective: Sell your bear skin to the Butcher
+  RewardMoney: 150
   rewardItem: {fileID: 0}
-  NPC: {fileID: 0}
-  QuestIcon: {fileID: 0}
-  dialogue: []
-  sfxClip: 
+  QuestIcon: {fileID: 8169610128998381828, guid: 3992dee08b9089e4c9afe5677dfb4676,
+    type: 3}
+  questLocation: {fileID: 8869736918704472830, guid: d3ca4b56c31c1c04a943cc9b57d7a653,
+    type: 3}
+  TurnInItem: {fileID: 11400000, guid: cedffd5d71c218649a1e293f99580616, type: 2}
+  followUpDialogue:
+  - {fileID: 11400000, guid: 29bb07d583b8d0a4a82a4b6ad5b62599, type: 2}

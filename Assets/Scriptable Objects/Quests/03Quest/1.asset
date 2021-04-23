@@ -16,7 +16,9 @@ MonoBehaviour:
   Description: 
   Objective: Hunt for a bear  in a nearby forest
   RewardMoney: 450
-  rewardItem: {fileID: 0}
+  rewardItem: {fileID: 11400000, guid: cedffd5d71c218649a1e293f99580616, type: 2}
+  QuestIcon: {fileID: 2600030651870002690, guid: 5c3f7d2c29861c243a9807cb729b3731,
+    type: 3}
   target: {fileID: 9219011335627013502, guid: e97ef96c656d2604eb1262022113373b, type: 3}
   followUpDialogue:
   - {fileID: 11400000, guid: 4e422f9453d7eee45bb2535da6e1d36f, type: 2}
