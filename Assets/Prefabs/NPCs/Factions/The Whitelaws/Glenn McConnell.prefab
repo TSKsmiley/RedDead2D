@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8869736918704472800}
   - component: {fileID: 8869736918704472831}
   m_Layer: 0
-  m_Name: Howard Jackson
+  m_Name: Glenn McConnell
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -171121271
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6407856728415304752, guid: e431a57911ccd404cafe6b3f0b9ae23a,
-    type: 3}
+  m_Sprite: {fileID: 261045557953935233, guid: 67545d8ee9eadf144b5b51d0842047af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.4375, y: 0.96875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 3.45, y: 4.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.4375, y: 0.96875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 3.45, y: 4.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
