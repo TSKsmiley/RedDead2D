@@ -143,12 +143,11 @@ public class PlayerController : MonoBehaviour
         {
             case "Teleport": //Enter and exit buildings with transition
                 currentTrigger.GetComponent<BuildingInfo>().Teleport(this.transform, this);
-
                 break;
 
             case "Tent":
                 currentTrigger.GetComponent<tentSleep>().Sleep();
-                QuestManager.instance.GetActive().CheckCompleteConditions(currentTrigger, this.gameObject);
+                if (QuestManager.instance.isStoryComplete == false) QuestManager.instance.GetActive().CheckCompleteConditions(currentTrigger, this.gameObject);
                 break;
 
             case "NPC":

@@ -10,8 +10,7 @@ public class SleepQuest : Quest
     {
         if (_trigger.tag == "Tent")
         {
-            Debug.Log(QuestManager.instance.GetActive() as SleepQuest);
-            if (QuestManager.instance.GetActive() as SleepQuest != null) QuestManager.instance.CompleteActive();
+            if (QuestManager.instance.GetActive().GetType() == typeof(SleepQuest)) QuestManager.instance.CompleteActive();
         }
     }
 }
