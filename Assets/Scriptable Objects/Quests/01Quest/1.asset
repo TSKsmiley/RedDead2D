@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fbe4534e5a4c65ba7e618b0c863782, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  Name: The Basics
+  Description: 
+  Objective: Use your 'Intereact' button
+  RewardMoney: 10
+  NPC: {fileID: 3218615963001515889, guid: 9f565a371242136498da1a7475150932, type: 3}
+  QuestIcon: {fileID: 2600030651870002690, guid: 5c3f7d2c29861c243a9807cb729b3731,
+    type: 3}
+  dialogue:
+  - {fileID: 11400000, guid: ffdb7f49536c7c141a585822d71f29ab, type: 2}
+  sfxClip: greeting1b

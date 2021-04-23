@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
+  m_Name: 1_01
+  m_EditorClassIdentifier: 
+  dialogueSegments:
+  - speakerName: Frank
+    dialogueText: "If it isn\u2019t the great Will Johnson."
+    choices: []
+  - speakerName: Will
+    dialogueText: Frankie, long time no see...
+    choices: []
+  - speakerName: Frank
+    dialogueText: "Haven\u2019t seen you since Oxriver, how you been \u2018ol buddy?"
+    choices: []
+  - speakerName: Will
+    dialogueText: You know, the usual. Been moving town to town.. Surviving.
+    choices: []
+  - speakerName: Frank
+    dialogueText: "You\u2019ve read the newspaper lately? Things are getting crazy
+      with The Whitelaws"
+    choices: []
+  - speakerName: Frank
+    dialogueText: Last night they robbed a bank in Talonstead... More than 15 or
+      so folks, the law stood no chance
+    choices: []
+  - speakerName: Frank
+    dialogueText: "Now that\u2019s surviving."
+    choices: []
+  - speakerName: Will
+    dialogueText: Sure, if you have a deathwish.
+    choices: []
+  - speakerName: Will
+    dialogueText: "What\u2019s next? You hopping on their wagons and joining them?"
+    choices: []
+  - speakerName: Frank
+    dialogueText: I aint made no decision yet. But they surely know how to make a
+      buck
+    choices: []
+  - speakerName: Will
+    dialogueText: Good point.
+    choices: []
+  - speakerName: Will
+    dialogueText: "I\u2019ll see you around, I got some stuff to do in Rustpass before
+      I leave for Crooksnag"
+    choices: []

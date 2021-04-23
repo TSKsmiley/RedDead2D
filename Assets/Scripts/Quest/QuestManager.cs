@@ -5,7 +5,7 @@ using QuestSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Object = System.Object;
+using Inventory;
 
 public class QuestManager : MonoBehaviour
 {
@@ -43,6 +43,7 @@ public class QuestManager : MonoBehaviour
     {
         if (IsDialogueQuest()) Destroy(CurrQuestIcon);
         if (AllQuests[ActiveQuest].RewardMoney != 0) MoneyManager.instance.AddMoney(AllQuests[ActiveQuest].RewardMoney);
+        if (AllQuests[ActiveQuest].rewardItem != null) Inventory.Controller.instance.AddItem(AllQuests[ActiveQuest].rewardItem);
         ActiveQuest++;
         SetUI();
     }

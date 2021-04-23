@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fbe4534e5a4c65ba7e618b0c863782, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  Name: An old friend
+  Description: 
+  Objective: Go to Rustpass and speek with Joseph
+  RewardMoney: 500
+  NPC: {fileID: 7151649308056299374, guid: 738f328b548460d4c9c2883a0d2358a2, type: 3}
+  QuestIcon: {fileID: 2600030651870002690, guid: 5c3f7d2c29861c243a9807cb729b3731,
+    type: 3}
+  dialogue:
+  - {fileID: 11400000, guid: c36d21dc02879644f9c822431498facc, type: 2}
+  sfxClip: greeting1a
