@@ -41,7 +41,7 @@ public class QuestManager : MonoBehaviour
 
     public void CompleteActive()
     {
-        if (IsDialogueQuest()) Destroy(CurrQuestIcon);
+        if (AllQuests[ActiveQuest].QuestIcon != null) Destroy(CurrQuestIcon);
         if (AllQuests[ActiveQuest].RewardMoney != 0) MoneyManager.instance.AddMoney(AllQuests[ActiveQuest].RewardMoney);
         if (AllQuests[ActiveQuest].rewardItem != null) Inventory.Controller.instance.AddItem(AllQuests[ActiveQuest].rewardItem);
         ActiveQuest++;
@@ -77,12 +77,13 @@ public class QuestManager : MonoBehaviour
     {
         try
         {
-            var questToDisplay = (dynamic) AllQuests[ActiveQuest];
-
-            if (IsDialogueQuest())
+            Quest questToDisplay = AllQuests[ActiveQuest];
+            
+            if (questToDisplay.QuestIcon != null && questToDisplay.questLocation != null)
             { 
-                GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.NPC.transform.position, questToDisplay.NPC.transform.rotation);
-                g.transform.parent = GameObject.Find(questToDisplay.NPC.name).transform;
+                GameObject g = Instantiate(questToDisplay.QuestIcon, questToDisplay.questLocation.transform.position, questToDisplay.questLocation.transform.rotation);
+                g.transform.parent = GameObject.Find(questToDisplay.questLocation.name).transform;
+                
                 CurrQuestIcon = g;
             }
             

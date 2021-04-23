@@ -69,3 +69,6 @@ TagManager:
   - name: Particles
     uniqueID: 3937119951
     locked: 0
+  - name: Quest Icons
+    uniqueID: 2815670553
+    locked: 0

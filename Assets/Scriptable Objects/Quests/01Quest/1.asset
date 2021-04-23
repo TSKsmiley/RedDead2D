@@ -16,8 +16,10 @@ MonoBehaviour:
   Description: 
   Objective: Use your 'Intereact' button
   RewardMoney: 10
-  NPC: {fileID: 3218615963001515889, guid: 9f565a371242136498da1a7475150932, type: 3}
+  rewardItem: {fileID: 0}
   QuestIcon: {fileID: 2600030651870002690, guid: 5c3f7d2c29861c243a9807cb729b3731,
+    type: 3}
+  questLocation: {fileID: 3218615963001515889, guid: 9f565a371242136498da1a7475150932,
     type: 3}
   dialogue:
   - {fileID: 11400000, guid: ffdb7f49536c7c141a585822d71f29ab, type: 2}

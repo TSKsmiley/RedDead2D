@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: An old friend
   Description: 
-  Objective: Go to Rustpass and speek with Joseph
+  Objective: Go to Rustpass and speek with Frank
   RewardMoney: 500
-  NPC: {fileID: 7151649308056299374, guid: 738f328b548460d4c9c2883a0d2358a2, type: 3}
+  rewardItem: {fileID: 0}
   QuestIcon: {fileID: 2600030651870002690, guid: 5c3f7d2c29861c243a9807cb729b3731,
+    type: 3}
+  questLocation: {fileID: 7151649308056299374, guid: 738f328b548460d4c9c2883a0d2358a2,
     type: 3}
   dialogue:
   - {fileID: 11400000, guid: c36d21dc02879644f9c822431498facc, type: 2}

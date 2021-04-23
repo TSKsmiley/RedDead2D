@@ -10,6 +10,8 @@ public class Quest : ScriptableObject
     public string Objective;
     public int RewardMoney = 0;
     public Item rewardItem;
+    public GameObject QuestIcon;
+    public GameObject questLocation;
 
     public virtual void CheckCompleteConditions(Collider2D _trigger, GameObject _caller) {}
 }

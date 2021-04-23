@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
   m_Name: 1_01
   m_EditorClassIdentifier: 
-  dialogueSegments: []
+  dialogueSegments:
+  - speakerName: Butcher
+    dialogueText: That skin looks pretty rough, did you shoot it with a shotgun or
+      something?
+    choices: []
+  - speakerName: Will
+    dialogueText: Do I look like a full time hunter to you?
+    choices: []
+  - speakerName: Butcher
+    dialogueText: "I suppose not, I\u2019ll give you $150 for that crap"
+    choices: []

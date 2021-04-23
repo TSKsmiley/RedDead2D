@@ -10,9 +10,6 @@ namespace QuestSystem
     public class DialogueQuest : Quest
     {
         // - - - PROPERTIES - - - 
-        public GameObject NPC;
-
-        public GameObject QuestIcon;
         public Dialogue[] dialogue;
 
         public string sfxClip;
@@ -22,7 +19,7 @@ namespace QuestSystem
         public override void CheckCompleteConditions(Collider2D _trigger, GameObject _caller)
         {
             if (_trigger == null) return;
-            if (_trigger.name == NPC.name) NPC.GetComponent<DialogueTrigger>().TriggerDialogue(null);
+            if (_trigger.name == base.questLocation.name) base.questLocation.GetComponent<DialogueTrigger>().TriggerDialogue(null);
         }
     }
 }
