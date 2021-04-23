@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
 
             case "Tent":
                 currentTrigger.GetComponent<tentSleep>().Sleep();
+                QuestManager.instance.GetActive().CheckCompleteConditions(currentTrigger, this.gameObject);
                 break;
 
             case "NPC":
