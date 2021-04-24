@@ -41,20 +41,20 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = FindSound(name);
 
-        return s.source;
+        return s?.source;
     }
     
     public void Play(string name)
     {
         Sound s = FindSound(name);
             
-        s.source.Play();
+        s?.source.Play();
     }
 
     public void Stop(string name) {
         Sound s = FindSound(name);
 
-        s.source.Stop();
+        s?.source.Stop();
     }
 
     private Sound FindSound(string _name)
@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
         if (s == null)
         {
             Debug.LogWarning("Sound " + name + " not found");
+            return null;
         }
 
         return s;
