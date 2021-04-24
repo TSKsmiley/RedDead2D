@@ -18,6 +18,7 @@ namespace QuestSystem
             if (TurnInItem != null)
             {
                 Inventory.Controller.instance.RemoveItems(1, TurnInItem.name);
+                if (followUpDialogue.Length != 0) DialogueManager.instance.StartDialogue(followUpDialogue[0]);
                 QuestManager.instance.CompleteActive();
             }
         }

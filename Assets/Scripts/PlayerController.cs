@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
                 break;
             
             case "ShopVendor":
-                currentTrigger.gameObject.GetComponent<ShopVendor>().OpenShop(rb);
+                currentTrigger.gameObject.GetComponent<ShopVendor>().OpenShop(rb, this);
                 break;
         }
     }
@@ -206,6 +206,8 @@ public class PlayerController : MonoBehaviour
 
     void openMap(InputAction.CallbackContext obj)
 	{
+        if (ShopManager.instance.isOpen == true) return;
+		
         if (Inventory.Controller.instance.isOpen == true) return;
         if (DialogueManager.instance.isDialogueStarted == true) return;
         isMapOpen = !isMapOpen;
@@ -215,7 +217,6 @@ public class PlayerController : MonoBehaviour
 		{
             g.SetActive(!g.activeSelf);
 		}
-
 
 		if (hideObjectsOnMap[0].activeSelf == true)
 		{

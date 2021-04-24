@@ -10,28 +10,39 @@ using UnityEngine.UI;
 public class ShopVendor : MonoBehaviour
 {
     public List<Item> availableItems;
-    
-    [Header("UI")] 
-    public GameObject itemBox;
 
-    public GameObject shopUI;
-    
-    public RectTransform itemBoxParent;
-    
-    [Header("Selected Item UI")] 
-    public Image selectItemSprite;
+    private GameObject itemBox;
 
-    public TextMeshProUGUI selectItemName;
-    public TextMeshProUGUI selectItemDescription;
-    public Button btnBuy;
+    private GameObject shopUI;
 
-    private bool isOpen = false;
+    private RectTransform itemBoxParent;
+
+    private Image selectItemSprite;
+
+    private TextMeshProUGUI selectItemName;
+    private TextMeshProUGUI selectItemDescription;
+    private Button btnBuy;
+
     private List<GameObject> spawnedButtons = new List<GameObject>();
 
-    public void OpenShop(Rigidbody2D _rb)
+	private void Start()
+	{
+        itemBox = ShopManager.instance.itemBox;
+        shopUI = ShopManager.instance.shopUI;
+        itemBoxParent = ShopManager.instance.itemBoxParent;
+        selectItemSprite = ShopManager.instance.selectItemSprite;
+        selectItemName = ShopManager.instance.selectItemName;
+        selectItemDescription = ShopManager.instance.selectItemDescription;
+        btnBuy = ShopManager.instance.btnBuy;
+    }
+
+	public void OpenShop(Rigidbody2D _rb, PlayerController playerScript)
     {
-        isOpen = !isOpen;
-        if (isOpen == false)
+        ShopManager.instance.isOpen = !ShopManager.instance.isOpen;
+		if (playerScript.isMapOpen == true) return;
+        if (Inventory.Controller.instance.isOpen == true) return;
+
+        if (ShopManager.instance.isOpen == false)
         {
             CloseShop(_rb);
             return;
