@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8310a2ec8d9cd944bac84067caefb102, type: 3}
+  m_Name: 1_01
+  m_EditorClassIdentifier: 
+  dialogueSegments:
+  - speakerName: Sir Austin
+    dialogueText: So Will. You made it all the way to Talonstead
+    choices: []
+  - speakerName: Sir Austin
+    dialogueText: 'Mercenaries like you are to be feared. '
+    choices: []
+  - speakerName: Will Johnson
+    dialogueText: Well Sir, Im just doing my best to stay alive
+    choices: []
+  - speakerName: Sir Austin
+    dialogueText: Well you're damn good at it
+    choices: []
+  - speakerName: Sir Austin
+    dialogueText: Congratulations on your Journey. But it ends here.
+    choices: []
+  - speakerName: Sir Austin
+    dialogueText: Thank you for your service.
+    choices: []

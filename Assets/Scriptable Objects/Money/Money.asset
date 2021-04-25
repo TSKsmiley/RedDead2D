@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726edc2ae52695244a441317220c9386, type: 3}
   m_Name: Money
   m_EditorClassIdentifier: 
-  currMoney: 20000
+  currMoney: 0
